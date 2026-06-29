@@ -1,0 +1,443 @@
+  <!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shine Star Luck</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+@import
+url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap'); 
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        background: radial-gradient(circle at top, #003366, #000b18);
+        background-attachment: fixed;
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 20px;
+        padding-bottom: 100px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ffcc00;
+        letter-spacing: 2px;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+        color: #00d2ff;
+        font-weight: 600;
+    }
+
+    .hero-card {
+        background: rgba(0, 210, 255, 0.1);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(0, 210, 255, 0.4);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 210, 255, 0.1);
+    }
+
+    .hero-card h2 {
+        color: #ffcc00;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .price-box {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+
+    .price-item {
+        text-align: center;
+    }
+
+    .price-item span {
+        display: block;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+
+    .price-item strong {
+        font-size: 1.2rem;
+        color: #00d2ff;
+    }
+
+    .list-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .list-item i {
+        color: #ffcc00;
+        margin-right: 12px;
+        font-size: 1.1rem;
+    }
+
+    .promo-banner {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 25px;
+        margin: 15px 0;
+        text-align: center;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .promo-banner h4 {
+        color: #00d2ff;
+        margin-bottom: 5px;
+    }
+.nav-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 75px;
+        background: rgba(0, 11, 24, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        padding: 0 5px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.6rem;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+    .nav-btn i {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .nav-btn.active {
+        color: #00d2ff;
+        transform: translateY(-5px);
+    }
+
+    .page {
+        display: none;
+        animation: slideUp 0.4s ease-out;
+    }
+
+    .page.active {
+        display: block;
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+@keyframes starVibrate {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+.vibrate-star {
+    display: inline-block;
+    animation: starVibrate 2s infinite ease-in-out;
+}
+    
+    .alert-box {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        padding: 20px;
+        font-size: 0.85rem;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .alert-box h5 {
+        color: #00d2ff;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .alert-box h5 i {
+        margin-right: 8px;
+    }
+
+    .btn-main {
+        background: linear-gradient(to right, #00d2ff, #3a7bd5);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        color: white;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+    }
+.profile-placeholder {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 0 auto 12px;
+        border: 2px solid #00d2ff;
+    }
+    .spoter-card {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .spoter-card h3 {
+        color: #ffcc00;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .spoter-card p {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+.form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: #00d2ff; font-weight: 600; }
+    .form-input { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; outline: none; transition: 0.3s; }
+    .form-input:focus { border-color: #00d2ff; background: rgba(255,255,255,0.1); }
+    .file-label { display: flex; width: 100px; height: 100px; border-radius: 50%; border: 2px dashed #00d2ff; margin: 0 auto 20px; align-items: center; justify-content: center; cursor: pointer; overflow: hidden; background: rgba(0, 210, 255, 0.05); }
+    .file-label img { width: 100%; height: 100%; object-fit: cover; }
+    .file-label i { font-size: 1.5rem; color: #00d2ff; }
+.member-list { display: flex; flex-direction: column; gap: 10px; }
+    .member-card { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 10px 15px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+    .member-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00d2ff; margin-right: 15px; object-fit: cover; background: rgba(255,255,255,0.1); }
+    .member-info h4 { font-size: 0.9rem; color: #ffffff; }
+    .member-info p { font-size: 0.7rem; color: #00d2ff; }
+.badge { font-size: 0.6rem; padding: 2px 8px; border-radius: 5px; font-weight: 800; margin-left: 5px; text-transform: uppercase; }
+    .badge-new { background: #28a745; color: white; animation: pulse 1.5s infinite; }
+    .badge-pending { background: #ff5050; color: white; }
+    .badge-verified { background: #00d2ff; color: white; }
+    
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    .receipt-card {
+        background: white;
+        color: #333;
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 20px;
+        display: none;
+        border-left: 10px solid #00d2ff;
+    }
+    .receipt-card h2 { color: #003366; font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+    .receipt-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; }
+
+    .winner-box {
+        background: linear-gradient(45deg, #ffcc00, #ff9900);
+        color: #000;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+        display: none;
+    }
+.search-box {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.05);
+        color: white;
+        margin-bottom: 15px;
+        outline: none;
+    }
+.admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .admin-btn { background: rgba(255,255,255,0.1); border: 1px solid #00d2ff; color: white; padding: 15px 5px; border-radius: 12px; font-size: 0.75rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 5px; transition: 0.3s; }
+    .admin-btn i { font-size: 1.2rem; color: #ffcc00; }
+    .admin-btn span { font-weight: 600; }
+    .admin-btn .count-badge { background: #ff5050; color: white; padding: 2px 6px; border-radius: 10px; font-size: 0.6rem; margin-top: 2px; }
+    .admin-btn.active { background: #00d2ff; color: #000; }
+    .admin-btn.active i { color: #000; }
+    .stat-card { background: linear-gradient(135deg, rgba(0,210,255,0.1), rgba(58,123,213,0.1)); border: 1px solid rgba(0,210,255,0.2); border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .stat-info h3 { font-size: 1.2rem; color: #00d2ff; }
+    .stat-info p { font-size: 0.7rem; opacity: 0.8; }
+    .admin-list-item { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
+    .admin-actions button { padding: 5px 10px; border-radius: 8px; border: none; font-size: 0.65rem; cursor: pointer; font-weight: bold; margin-left: 5px; }
+    .btn-approve { background: #28a745; color: white; }
+    .btn-reject { background: #ff5050; color: white; }
+.progress-container { margin: 20px 0; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 5px; border: 1px solid rgba(0,210,255,0.3); }
+    .progress-bar { height: 12px; background: linear-gradient(90deg, #00d2ff, #3a7bd5); border-radius: 8px; width: 0%; transition: width 1s ease-in-out; position: relative; }
+    .progress-text { display: flex; justify-content: space-between; font-size: 0.7rem; margin-top: 5px; color: #ffcc00; font-weight: 600; }
+    .floating-chat { position: fixed; bottom: 85px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 999; animation: bounce 2s infinite; text-decoration: none; }
+    @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+.proof-gallery { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .proof-gallery::-webkit-scrollbar { display: none; }
+    .proof-card { flex: 0 0 150px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 15px; overflow: hidden; border: 1px solid rgba(0,210,255,0.2); scroll-snap-align: start; }
+    .proof-card img { width: 100%; height: 100%; object-fit: cover; }
+    .btn-download { background: #003366; color: white; border: none; padding: 10px; border-radius: 10px; width: 100%; margin-top: 10px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+@media print { 
+        body * { visibility: hidden; } 
+        #receiptBox, #receiptBox * { visibility: visible; } 
+        #receiptBox { position: absolute; left: 0; top: 0; width: 100%; border: none; } 
+        .nav-bar, .floating-chat, .btn-download, .btn-main { display: none !important; } 
+    }
+    @media print { .nav-bar, .floating-chat, .btn-main, .btn-download { display: none !important; } body { background: white; } .receipt-card { border: none; box-shadow: none; display: block !important; } }
+#welcomeScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10000; transition: opacity 0.8s ease; }
+    #welcomeScreen h1 { color: #ffcc00; font-size: 1.8rem; font-family: 'Orbitron', sans-serif; letter-spacing: 3px; text-align: center; }
+</style>
+
+<div class="container">
+   <div id="authScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000b18; z-index: 20000; display: none; flex-direction: column; justify-content: center; padding: 30px;">
+    <div class="header">
+        <h1>SHINE <span class="vibrate-star">⭐</span> STAR</h1>
+        <p>Login to Continue</p>
+    </div>
+    <div id="loginForm" class="glass">
+        <div class="form-group"><label>Email</label><input type="email" id="authEmail" class="form-input"></div>
+        <div id="signupFields" style="display:none;">
+            <div class="form-group"><label>First Name</label><input type="text" id="authFName" class="form-input"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="authLName" class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <div style="position:relative;">
+                <input type="password" id="authPass" class="form-input">
+                <span onclick="togglePass('authPass')" style="position:absolute; right:15px; top:50%; transform:translateY(-50%); cursor:pointer; color:#00d2ff;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </span>
+            </div>
+        </div>
+        <div id="confirmPassField" style="display:none;" class="form-group">
+            <label>Confirm Password</label>
+            <div style="position:relative;">
+                <input type="password" id="authConfirmPass" class="form-input">
+                <span onclick="togglePass('authConfirmPass')" style="position:absolute; right:15px; top:50%; transform:translateY(-50%); cursor:pointer; color:#00d2ff;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </span>
+            </div>
+        </div>
+        <button class="btn-main" id="authBtn" onclick="handleAuth()">Login</button>
+        <p id="authToggle" onclick="toggleAuthMode()" style="text-align:center; margin-top:15px; font-size:0.8rem; color:#00d2ff; cursor:pointer;">Don't have an account? Signup</p>
+    </div>
+</div>
+    <div id="home" class="page active">
+        <div class="header" style="position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 0;">
+            <div style="display: flex; flex-direction: column; align-items: center; margin: 0 auto;">
+                <h1 style="display: flex; align-items: center; gap: 5px; font-size: 1.5rem; margin: 0;">
+                    <span>SHINE</span>
+                    <span class="vibrate-star">⭐</span>
+                    <span>STAR</span>
+                </h1>
+                <p style="color: #00d2ff; font-size: 0.8rem; font-weight: 600; margin-top: -2px;">Luck instalment</p>
+            </div>
+            <button onclick="toggleSidebar()" style="position: absolute; left: 0; background: none; border: none; color: #ffcc00; font-size: 1.5rem; cursor: pointer; z-index: 10;">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="sidebar" style="position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: rgba(0, 11, 24, 0.98); backdrop-filter: blur(20px); z-index: 10001; transition: 0.4s; border-right: 1px solid rgba(255,255,255,0.1); padding: 20px; overflow-y: auto;">
+            <div style="display: flex; justify-content: flex-start; margin-bottom: 30px;">
+                <button onclick="toggleSidebar()" style="background: none; border: none; color: #fff; font-size: 1.5rem;"><i class="fas fa-times"></i></button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'userProfile'); toggleSidebar()">
+                    <i class="fas fa-user-circle"></i> <span>Profile</span>
+                </button>
+  <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'mobileApply'); toggleSidebar()">
+                    <i class="fas fa-id-card"></i> <span>Mobile KYC</span>
+                </button>         
+                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'team'); toggleSidebar()">
+                    <i class="fas fa-crown"></i> <span>Founder</span>
+                </button>
+                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'privacyPolicy'); toggleSidebar()">
+                    <i class="fas fa-shield-alt"></i> <span>Privacy Policy</span>
+                </button>
+                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'termsConditions'); toggleSidebar()">
+                    <i class="fas fa-file-contract"></i> <span>Terms Conditions</span>
+                </button>
+                
+                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'adminPanel'); toggleSidebar()">
+                    <i class="fas fa-user-cog"></i> <span>Admin Panel</span>
+                </button>
+<button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px; border-color: #ff5050;" onclick="logout()">
+                    <i class="fas fa-sign-out-alt" style="color: #ff5050;"></i> <span>Logout</span>
+                </button>
+            </div>
+        </div>
+        <div class="glass hero-card">
+            <h2>MHENGA MOBILE LENA AB HOWA ASAAN</h2>
+            <p style="font-size: 0.85rem; opacity: 0.9;">60,000 Wala mobile sirf 5,000 ki qist mein hasil karen.</p>
+            <div class="price-box">
+                <div class="price-item">
+                    <span>Monthly</span>
+                    <strong>5,000</strong>
+                </div>
+                <div class="price-item">
+                    <span>Duration</span>
+                    <strong>15 Months</strong>
+                </div>
+                <div class="price-item">
+                    <span>Total</span>
+                    <strong>75,000</strong>
+                </div>
+            </div>
+            <button class="btn-main" onclick="nav
