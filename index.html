@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -28,8 +28,9 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
     .container {
         padding: 20px;
         padding-bottom: 100px;
-        max-width: 500px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .glass {
@@ -346,17 +347,20 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
 </style>
 
 <div class="container">
+   <div id="splashScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000080; z-index: 30000; display: none; flex-direction: column; justify-content: center; align-items: center;">
+       <h1 style="color: #ffcc00; font-family: 'Orbitron', sans-serif; font-size: 1.8rem; letter-spacing: 3px; text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);">SHINE <span class="vibrate-star">⭐</span> STAR</h1>
+   </div>
    <div id="authScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000b18; z-index: 20000; display: none; flex-direction: column; justify-content: center; padding: 30px;">
     <div class="header">
         <h1>SHINE <span class="vibrate-star">⭐</span> STAR</h1>
         <p>Login to Continue</p>
     </div>
     <div id="loginForm" class="glass">
-        <div class="form-group"><label>Email</label><input type="email" id="authEmail" class="form-input"></div>
         <div id="signupFields" style="display:none;">
             <div class="form-group"><label>First Name</label><input type="text" id="authFName" class="form-input"></div>
             <div class="form-group"><label>Last Name</label><input type="text" id="authLName" class="form-input"></div>
         </div>
+        <div class="form-group"><label>Email</label><input type="email" id="authEmail" class="form-input"></div>
         <div class="form-group">
             <label>Password</label>
             <div style="position:relative;">
@@ -425,6 +429,11 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         </div>
         <div class="glass hero-card">
             <h2>MHENGA MOBILE LENA AB HOWA ASAAN</h2>
+            <div id="homePhotoBox" style="display:none; margin: 20px 0;">
+                <div class="glass" style="padding:0; overflow:hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
+                    <img id="homePhotoImg" src="" style="width:100%; height:auto; display:block;">
+                </div>
+            </div>
             <p style="font-size: 0.85rem; opacity: 0.9;">60,000 Wala mobile sirf 5,000 ki qist mein hasil karen.</p>
             <div class="price-box">
                 <div class="price-item">
@@ -441,25 +450,12 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 </div>
             </div>
             <button class="btn-main" onclick="nav(document.querySelectorAll('.nav-btn')[2], 'form')">JOIN GROUP NOW</button>
-<button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; margin-bottom: 20px; width: 100%;" onclick="nav(null, 'winnerListPage')">
+            <button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; margin-bottom: 20px; width: 100%;" onclick="nav(null, 'winnerListPage')">
                 <i class="fas fa-trophy"></i> Winner List
             </button>
         </div>
-<div id="homePhotoBox" class="glass" style="padding:0; overflow:hidden; display:none; margin-top: 20px;">
-    <img id="homePhotoImg" src="" style="width:100%; height:auto; display:block;">
-</div>
-
-<div class="glass" style="margin-bottom: 20px; border-bottom: 3px solid #ffcc00;">
-            <div class="progress-text">
-                <span>Group Occupancy</span>
-                <span id="seatCount">0/130 Seats</span>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar" id="regBar"></div>
-            </div>
-            <p style="font-size: 0.65rem; text-align: center; opacity: 0.8;">Hurry up! Join before the group fills up.</p>
-        </div>
-<div class="glass" style="margin-bottom: 20px; border-bottom: 3px solid #00d2ff;">
+<div id="occupancyContainer"></div>
+<div class="glass" style="margin-bottom: 20px; border-top: 3px solid #ffcc00;">
             <div id="drawCountdown" style="text-align:center; color:#ffcc00; font-weight:800; font-size:1.1rem; margin-bottom:10px;">00d 00h 00m 00s</div>
             <div class="progress-text">
                 <span>Daily Pay Due Progress</span>
@@ -468,7 +464,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             <div class="progress-container">
                 <div class="progress-bar" id="dailyProgressBar" style="width: 0%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div>
             </div>
-            <div id="recentDailyPayments" style="margin-top:10px; font-size:0.6rem; opacity:0.8;"></div>
+            <div id="recentDailyPayments" style="margin-top:10px; font-size:0.7rem; max-height:100px; overflow-y:auto; padding-right:5px; color:#28a745; font-weight:600;"></div>
         </div>
         <div class="glass">
             <div class="list-item">
@@ -493,60 +489,72 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 Shine Star sirf ek installment system nahi, balkay ek <strong>Powerful Business Model</strong> hai. Hum har city se mukhlis aur trusted logon ko apne staff ka hissa banana chahte hain. Aap hamari team join kar ke mahana behtareen munafa kama sakte hain.
             </p>
             
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;">
-                    <h5 style="color: #00d2ff; font-size: 0.9rem; margin-bottom: 5px; font-weight: 700;">LEVEL 1: STARTER PARTNER</h5>
-                    <p style="font-size: 0.75rem; opacity: 0.8; line-height: 1.4;">Har joining par <strong>Rs 1,000</strong> profit. 5 members mukammal hone par aapko <strong>1 STAR ⭐</strong> aur "Trusted User" ka darja diya jayega.</p>
+            <div style="display: flex; flex-direction: column; gap: 35px; padding: 10px 5px; text-align: center;">
+                <div>
+                    <h5 style="color: #00d2ff; font-size: 1.1rem; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">STARTER PARTNER</h5>
+                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Shine Star ke sath apne safar ka aghaz karein. Har naye member ko group ka hissa banane par aapko <strong>Rs 1,000</strong> ka fori munafa diya jaye ga. Jab aap 5 members mukammal kar lein gay to aapko <strong>1 STAR ⭐</strong> aur system mein "Trusted User" ka darja mil jaye ga.</p>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;">
-                    <h5 style="color: #ffcc00; font-size: 0.9rem; margin-bottom: 5px; font-weight: 700;">LEVEL 2: SILVER PARTNER</h5>
-                    <p style="font-size: 0.75rem; opacity: 0.8; line-height: 1.4;">10 members ke baad aapka profit barh kar <strong>Rs 1,500</strong> per member ho jayega. 15 members par aapko <strong>3 STARS ⭐⭐⭐</strong> milenge.</p>
+                <div>
+                    <h5 style="color: #ffcc00; font-size: 1.1rem; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">SILVER PARTNER</h5>
+                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Apni team ko mazeed barhayein aur Silver Partner ka muqam hasil karein. 10 members mukammal hone par aapka profit barh kar <strong>Rs 1,500</strong> per member ho jaye ga. 15 members par aapko <strong>3 STARS ⭐⭐⭐</strong> milenge jo aapki mehnat aur lagan ka wazay saboot hon gay.</p>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.08); padding: 15px; border-radius: 15px;">
-                    <h5 style="color: #ffcc00; font-size: 0.9rem; margin-bottom: 5px; font-weight: 700;"><i class="fas fa-crown"></i> LEVEL 3: GOLD FOUNDER</h5>
-                    <p style="font-size: 0.75rem; opacity: 0.8; line-height: 1.4;">25 members par aapko <strong>5 STARS ⭐⭐⭐⭐⭐</strong> aur <strong>Rs 2,000</strong> per member profit milega. Aapko hamari <strong>Official Founder Team</strong> ka hissa bana diya jayega.</p>
+                <div>
+                    <h5 style="color: #ffcc00; font-size: 1.1rem; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;"><i class="fas fa-crown"></i> GOLD FOUNDER</h5>
+                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Yeh hamara sab se bara aur izzat wala muqam hai. 25 members mukammal karne par aapko <strong>5 STARS ⭐⭐⭐⭐⭐</strong> aur <strong>Rs 2,000</strong> per member profit milega. Aapko hamari <strong>Official Founder Team</strong> ka hissa bana kar khas ikhtiyarat aur VIP darja diya jaye ga.</p>
                 </div>
             </div>
             <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Jitni aapki mehnat, utna aapka munafa. Shine Star ke sath apna mustaqbil sanwaren."</p>
         </div>
-        <div class="promo-banner">
-            <h4><i class="fas fa-motorcycle"></i> CD-70 BIKE OFFER</h4>
-            <p style="font-size: 0.8rem;">First Lucky Winner aur Last Member ko Shine Star ki taraf se <strong>Free CD Motorcycle</strong> di jaye gi.</p>
-        </div>
+        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center;">
+            <div style="display: flex; flex-direction: column; gap: 40px;">
+                <div>
+                    <h4 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;"><i class="fas fa-motorcycle"></i> CD-70 BIKE OFFER</h4>
+                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Shine Star apne members ke liye laya hai behtareen inaam. Group ke <strong>First Lucky Winner</strong> aur sab se <strong>Last Member</strong> ko Shine Star ki taraf se bilkul <strong>Free CD-70 Motorcycle</strong> tohfay mein di jaye gi.</p>
+                </div>
 
-        <div class="glass">
-            <h4 style="margin-bottom: 10px; color: #00d2ff;">3 MONTH FAST POLICY</h4>
-            <p style="font-size: 0.85rem;">3 Maah ke baad har mahine 1 Lucky member ke sath 3 members ko advance mobile milay ga takay 15 mahine mein sab ko mobile mil jaye.</p>
-        </div>
+                <div>
+                    <h4 style="color: #00d2ff; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">3 MONTH FAST POLICY</h4>
+                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">System ko tez banane ke liye 3 maah ke baad har mahine 1 Lucky Draw winner ke sath mazeed <strong>3 members ko advance mobile</strong> diya jaye ga, taake 15 mahine ke mukammal hone tak har member ko apna mobile mil sakay.</p>
+                </div>
 
-        <div id="homePhotoBox" class="glass" style="padding:0; overflow:hidden; display:none; margin-top: 20px;">
-    <img id="homePhotoImg" src="" style="width:100%; height:auto; display:block;">
-</div>
-
-        <div class="alert-box">
-            <h5><i class="fas fa-info-circle"></i> NOTE</h5>
-            <p>Lucky draw se pehle payment lazmi hai. 3 maah qist na dene par naam aur mojooda payment dono khatam kar diye jayengay.</p>
+                <div>
+                    <h4 style="color: #ff5050; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTE</h4>
+                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Lucky draw mein shamil hone ke liye qist ki waqt par adayegi lazmi hai. Agar koi member lagatar <strong>3 maah qist</strong> jama nahi karwaye ga, to uska naam group se nikal diya jaye ga aur jama shuda raqam wapis nahi hogi.</p>
+                </div>
+            </div>
         </div>
-<div id="notePhotoBox" style="display:none; margin-top: 25px;">
-    <div style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; padding: 25px 10px; text-align: center; margin-bottom: 15px; aspect-ratio: 16 / 9; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
-        <h1 style="color: #ffcc00; font-size: 2.2rem; font-weight: 800; margin: 0; text-shadow: 0 0 10px rgba(255,204,0,0.5);">SHINE <span class="vibrate-star">⭐</span> STAR</h1>
-        <div style="width: 70%; height: 2px; background: linear-gradient(90deg, transparent, #ffcc00, transparent); margin: 15px 0;"></div>
-        <p style="color: #ffcc00; font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; line-height: 1.3; margin: 0;">SOLAR PANEL SYSTEM<br>COMING SOON</p>
-    </div>
-    <div class="glass" style="padding:0; overflow:hidden; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1);">
-        <img id="notePhotoImg" src="" style="width:100%; height:auto; display:block;">
-    </div>
-</div>
 <div class="glass hero-card" style="margin-top: 20px;">
             <h4 style="color: #00d2ff; font-size: 0.8rem; text-transform: uppercase;">Solar Offer</h4>
             <h2 style="font-size: 1.3rem;">AB MHENGA SOLAR SYSTEM LENA HOWA ASAAN</h2>
-            <p style="font-size: 0.85rem; opacity: 0.9;">1,20,000 Wala Solar sirf 5,000 ki qist mein hasil karen.</p>
+            <div id="notePhotoBox" style="display:none; margin: 20px 0;">
+                <div class="glass" style="padding:0; overflow:hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
+                    <img id="notePhotoImg" src="" style="width:100%; height:auto; display:block;">
+                </div>
+            </div>
+            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 20px; margin-bottom: 20px;">
+                <h3 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">System Specifications</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; text-align: center;">
+                    <div>
+                        <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">PREMIUM SOLAR PANELS</h5>
+                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">4 Plates High Quality (585 Watt Each) jo dhoop aur badal dono mein behtareen performance dein gi.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">SMART HYBRID INVERTER</h5>
+                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Ek High Quality Inverter jo aapke ghar ka pora load bardasht karne ki salahiyat rakhta hai.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: #ffcc00; font-size: 0.9rem; font-weight: 700;">LOAD CAPACITY</h5>
+                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Aap is system par AC, Freezer, Water Motor, aur Iron (Press) jese bhari appliances step-by-step asani se chala sakte hain.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; opacity: 0.9;">1,50,000 Wala Solar sirf 6,000 ki qist mein hasil karen.</p>
             <div class="price-box">
                 <div class="price-item">
                     <span>Monthly</span>
-                    <strong>5,000</strong>
+                    <strong>6,000</strong>
                 </div>
                 <div class="price-item">
                     <span>Duration</span>
@@ -554,7 +562,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 </div>
                 <div class="price-item">
                     <span>Total</span>
-                    <strong>1,50,000</strong>
+                    <strong>1,80,000</strong>
                 </div>
             </div>
             <button class="btn-main" onclick="alert('Coming Soon!')">JOIN NOW</button>
@@ -575,34 +583,31 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             </div>
         </div>
 
-        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px;">
-            <h4 style="color: #ffcc00; font-size: 1.3rem; font-weight: 800; text-transform: uppercase; text-align: center; margin-bottom: 15px;">APNA SOLAR APNI BIJLI</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0; text-align: center; margin-bottom: 20px;">
-                Din ba din ki mehangai ne gareeb ka jeena mushkil kar diya hai. Bijli ke bhari taxes ne har ghar ko pareshan kar rakha hai. Ab waqt hai thori si bachat kar ke apna solar system lagane ka, taake bijli ke billon se hamesha ke liye jaan choote.
-            </p>
-            
-            <div style="background: rgba(0, 210, 255, 0.05); padding: 15px; border-radius: 15px; margin-bottom: 20px; border: 1px dashed rgba(0, 210, 255, 0.3);">
-                <p style="font-size: 0.85rem; line-height: 1.6; color: #fff;">
-                    Shine Star laya hai ek zabardast offer! Sirf <strong>5,000 mahana qist</strong> mein apna solar system lagayein jo aapke ghar ki har zaroorat ko pura karega. Is qist ko bijli ka bill samajh kar pay karein aur apna mustaqbil roshan karein.
-                </p>
-            </div>
-
-            <h5 style="color: #ffcc00; font-size: 1rem; margin-bottom: 10px; text-align: center;">LUCK AZMAYEIN AUR BACHAT KAREIN</h5>
-            <p style="font-size: 0.8rem; line-height: 1.5; opacity: 0.9; margin-bottom: 20px;">
-                Jis member ka naam draw mein nikal aaye, uski baqi qist maaf! Pehle winner ko 1,50,000 ka solar sirf 5,000 mein mil sakta hai. Agar aapka naam 25th number par bhi aata hai, tab bhi aapko solar qiston par sasta parega.
-            </p>
-
-            <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 204, 0, 0.2);">
-                <h5 style="color: #ffcc00; font-size: 0.9rem; text-align: center; margin-bottom: 10px;">MAYOOSI KHATAM - EXTRA INAAMAT</h5>
-                <p style="font-size: 0.75rem; text-align: center; margin-bottom: 12px; opacity: 0.8;">Agar aapka luck draw mein late aata hai, toh Shine Star aapko deta hai cash inaam:</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.7rem;">
-                    <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">26th No: <strong>20,000 Cash</strong></div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">27th No: <strong>25,000 Cash</strong></div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">28th No: <strong>30,000 Cash</strong></div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">29th No: <strong>40,000 Cash</strong></div>
+        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center;">
+            <div style="display: flex; flex-direction: column; gap: 35px;">
+                <div>
+                    <h4 style="color: #ffcc00; font-size: 1.3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">APNA SOLAR APNI BIJLI</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Din ba din ki mehangai ne gareeb ka jeena mushkil kar diya hai. Bijli ke bhari taxes ne har ghar ko pareshan kar rakha hai. Ab waqt hai thori si bachat kar ke apna solar system lagane ka, taake bijli ke billon se hamesha ke liye jaan choote.</p>
                 </div>
-                <div style="background: #ffcc00; color: #000; padding: 10px; border-radius: 8px; margin-top: 10px; text-align: center; font-weight: 800; font-size: 0.8rem;">
-                    LAST MEMBER: SOLAR + 50,000 CASH INAAM
+
+                <div>
+                    <h5 style="color: #00d2ff; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">ZABARDAST OFFER</h5>
+                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Shine Star laya hai ek zabardast offer! Sirf <strong>6,000 mahana qist</strong> mein apna solar system lagayein jo aapke ghar ki har zaroorat ko pura karega. Is qist ko bijli ka bill samajh kar pay karein aur apna mustaqbil roshan karein.</p>
+                </div>
+
+                <div>
+                    <h5 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">LUCK AZMAYEIN AUR BACHAT KAREIN</h5>
+                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Jis member ka naam draw mein nikal aaye, uski baqi qist maaf! Pehle winner ko 1,80,000 ka solar sirf 6,000 mein mil sakta hai. Agar aapka naam 25th number par bhi aata hai, tab bhi aapko solar qiston par sasta parega.</p>
+                </div>
+
+                <div>
+                    <h5 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">EXTRA CASH INAAMAT</h5>
+                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Agar aapka luck draw mein late aata hai, toh Shine Star aapko deta hai cash inaam: 26th No par 20,000, 27th No par 25,000, 28th No par 30,000 aur 29th No par 40,000 Cash inaam diya jaye ga.</p>
+                </div>
+
+                <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 204, 0, 0.3);">
+                    <h5 style="color: #ffcc00; font-size: 1rem; font-weight: 800; text-transform: uppercase;">LAST MEMBER OFFER</h5>
+                    <p style="font-size: 0.85rem; color: #fff; font-weight: 700;">SOLAR SYSTEM + 50,000 CASH INAAM</p>
                 </div>
             </div>
         </div>
@@ -662,16 +667,18 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                         </select>
                     </div>
                     <div class="form-group"><label>Payment Amount</label><input type="number" id="userPayment" class="form-input" value="5000"></div>
-                    <div class="glass" style="background:rgba(0,210,255,0.1); border:1px dashed #00d2ff; text-align:center; padding:10px; margin-bottom:15px;">
-                        <p style="font-size:0.8rem;">Send Payment to JazzCash:</p>
-                        <strong style="font-size:1.2rem; color:#ffcc00;">03005534198</strong>
+                    <div class="form-group">
+                        <label>Send to JazzCash</label>
+                        <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem;">
+                            Muhammad Imran 03005534198
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Upload Payment Screenshot</label>
                         <input type="file" id="payProof" class="form-input" accept="image/*" onchange="previewImage(this, 'proof')">
                     </div>
                     <div class="form-group"><label>Referral ID (Optional)</label><input type="text" id="refId" class="form-input"></div>
-                    <button class="btn-main" onclick="sendToWhatsApp()">Submit & Send WhatsApp</button>
+                    <button class="btn-main" onclick="sendToWhatsApp()">Submit</button>
                     <button style="background:none; border:none; color:#ccc; width:100%; margin-top:10px;" onclick="document.getElementById('formStep2').style.display='none'; document.getElementById('formStep1').style.display='block';">Back</button>
                 </div>
             </div>
@@ -729,7 +736,8 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             </button>
             <h1 style="margin: 0; font-size: 1.5rem;">INSTALLMENT CARD</h1>
         </div>
-<div id="payModal" class="glass" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:10002; width:90%; max-width:400px;">
+<div id="payModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000b18; z-index:10002; overflow-y:auto; padding:20px;">
+    <div class="glass" style="width:100%; max-width:400px; margin: 20px auto;">
             <h3 style="color:#ffcc00; margin-bottom:15px;">Pay Installment</h3>
             <p id="modalMonthText" style="font-size:0.8rem; margin-bottom:10px;"></p>
             <div class="form-group"><label>Full Name</label><input type="text" id="instName" class="form-input" readonly></div>
@@ -742,17 +750,20 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                     <option value="EasyPaisa">EasyPaisa</option>
                 </select>
             </div>
-            <div class="glass" style="background:rgba(0,210,255,0.1); border:1px dashed #00d2ff; text-align:center; padding:10px; margin-bottom:15px;">
-                <p style="font-size:0.8rem;">Send Rs 5,000 to JazzCash:</p>
-                <strong style="font-size:1.2rem; color:#ffcc00;">03005534198</strong>
+            <div class="form-group">
+                <label>Send Rs 5,000 to JazzCash</label>
+                <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem;">
+                    Muhammad Imran 03005534198
+                </div>
             </div>
             <div class="form-group">
                 <label>Upload Payment Screenshot</label>
                 <input type="file" id="instProof" class="form-input" accept="image/*">
             </div>
-            <button class="btn-main" id="instSubmitBtn" onclick="submitInstallment()">Submit & Send WhatsApp</button>
-            <button class="btn-main" style="background:#666; margin-top:10px;" onclick="document.getElementById('payModal').style.display='none'">Cancel</button>
+            <button class="btn-main" id="instSubmitBtn" onclick="submitInstallment()">Submit</button>
+            <button class="btn-main" style="background:#ff5050; margin-top:10px;" onclick="document.getElementById('payModal').style.display='none'">Cancel</button>
         </div>
+    </div>
         <div id="installmentContent">
             <div class="glass" style="text-align:center; padding:20px;">
                 <p style="opacity:0.6;">Please login to view your installment schedule.</p>
@@ -1048,17 +1059,35 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
     </button>
 </nav>
 <script>
-  function nav(btn, pageId) {
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-if(pageId === 'userProfile') loadUserProfile();
-        if(pageId === 'member') renderInstallmentCard();
-        if(btn) btn.classList.add('active'); document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        const targetPage = document.getElementById(pageId);
-        if(targetPage) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            targetPage.classList.add('active');
+  async function showSplash() {
+        const splash = document.getElementById('splashScreen');
+        splash.style.display = 'flex';
+        splash.style.opacity = '1';
+        const cached = localStorage.getItem('shine_cache');
+        if (cached) {
+            globalData = JSON.parse(cached);
+            renderAllUIs();
         }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        await fetchAllData();
+        autoLoadMyDash();
+        setTimeout(() => {
+            splash.style.opacity = '0';
+            document.querySelector('.container').style.display = 'block';
+            loadUserProfile();
+            setTimeout(() => {
+                splash.style.display = 'none';
+            }, 800);
+        }, 3000);
+    }
+function nav(btn, pageId) {
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        if(btn) btn.classList.add('active');
+        document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+        const targetPage = document.getElementById(pageId);
+        if(targetPage) targetPage.style.display = 'block';
+        if(pageId === 'userProfile') { /* Profile already loaded in background */ }
+        if(pageId === 'member') setTimeout(renderInstallmentCard, 0);
+        window.scrollTo(0, 0);
     }
 
     function toggleSidebar() {
@@ -1301,15 +1330,8 @@ video.srcObject = stream;
             };
             const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, options);
            const data = await response.json();
-            if (!response.ok) {
-                return { 
-                    error: true, 
-                    message: data.message || "Server Error",
-                    details: data.details || "",
-                    hint: data.hint || "" 
-                };
-            }
-            return data; 
+            if (!response.ok) return { error: true, message: data.message || "Server Error" };
+            return data;
         } catch (e) {
             return { error: true, message: "Network Error: " + e.message };
         }
@@ -1317,18 +1339,17 @@ video.srcObject = stream;
 
     async function fetchAllData() {
         const [m, c, d] = await Promise.all([
-            supabaseRequest('shine_members?select=*'),
+            supabaseRequest('shine_members?select=id,name,img,status,kyc_status,phone,city,address,referral_by,timestamp,verified,payment'),
             supabaseRequest('shine_config?select=*'),
-            supabaseRequest('shine_draws?select=*,shine_members(*)')
+            supabaseRequest('shine_draws?select=winner_id,draw_date')
         ]);
-if (d.error) console.error("Draw Fetch Error:", d.message);
-        if (m.error) {
-            console.error("Table Error:", m.message, m.details, m.hint);
+        if (!m.error) {
+            globalData.members = m;
+            globalData.config = c || [];
+            globalData.draws = d || [];
+            localStorage.setItem('shine_cache', JSON.stringify(globalData));
+            renderAllUIs();
         }
-        globalData.members = Array.isArray(m) ? m : [];
-        globalData.config = Array.isArray(c) ? c : [];
-        globalData.draws = Array.isArray(d) ? d : [];
-        renderAllUIs();
     }
     let uploadedImageData = "";
     let paymentProofData = "";
@@ -1360,11 +1381,15 @@ if (d.error) console.error("Draw Fetch Error:", d.message);
         }
     }
     async function loadDashboard(manualId = null) {
+        const btn = document.querySelector("button[onclick='loadDashboard()']");
+        const originalText = btn ? btn.innerText : "Check Dashboard";
+        if(btn) { btn.innerText = "Checking..."; btn.disabled = true; }
+
         const inputVal = document.getElementById('dashIdInput').value.trim().replace('SS-', '');
         const myUser = JSON.parse(localStorage.getItem('shine_user') || '{}');
         const userData = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
         let id = manualId || inputVal || userData.id || myUser.id;
-        if (!id) return;
+        if (!id) { if(btn) { btn.innerText = originalText; btn.disabled = false; } return; }
         id = id.toString().replace('SS-', '');
         const searchId = id;
         try {
@@ -1416,6 +1441,8 @@ if (d.error) console.error("Draw Fetch Error:", d.message);
             document.getElementById('dashResult').innerHTML = html;
         } catch (e) {
             console.error(e);
+        } finally {
+            if(btn) { btn.innerText = originalText; btn.disabled = false; }
         }
     }
 
@@ -1592,15 +1619,34 @@ async function renderAllUIs() {
     const approved = globalData.members.filter(m => m.status === 'approved');
     const pending = globalData.members.filter(m => m.status === 'pending');
     const instReqs = await supabaseRequest('shine_installments?status=eq.pending&select=id');
-    document.getElementById('totalCash').innerText = 'Rs ' + approved.reduce((s, m) => s + (Number(m.payment) || 0), 0).toLocaleString();
+    const totalRegCash = approved.reduce((sum, m) => sum + (parseFloat(m.payment) || 0), 0);
+    document.getElementById('totalCash').innerText = 'Rs ' + totalRegCash.toLocaleString();
     document.getElementById('activeCount').innerText = approved.length;
     document.getElementById('eligibleCount').innerText = "Approved Members: " + approved.length;
-    const totalSeats = 130;
-    const progressPercent = (approved.length / totalSeats) * 100;
-    const bar = document.getElementById('regBar');
-    if(bar) bar.style.width = Math.min(progressPercent, 100) + '%';
-    const seatText = document.getElementById('seatCount');
-    if(seatText) seatText.innerText = `${approved.length}/${totalSeats} Seats`;
+    
+    const approvedCount = approved.length;
+    const groupSize = 130;
+    const numGroups = Math.max(1, Math.ceil((approvedCount + 1) / groupSize));
+    let occupancyHtml = "";
+
+    for (let i = 0; i < numGroups; i++) {
+        const start = i * groupSize;
+        const currentInGroup = Math.min(groupSize, Math.max(0, approvedCount - start));
+        const percent = (currentInGroup / groupSize) * 100;
+        
+        occupancyHtml += `
+        <div class="glass" style="margin-bottom: 20px; border-bottom: 3px solid #ffcc00;">
+            <div class="progress-text">
+                <span>Group ${i + 1} Occupancy</span>
+                <span>${currentInGroup}/${groupSize} Seats</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: ${percent}%"></div>
+            </div>
+            <p style="font-size: 0.65rem; text-align: center; opacity: 0.8;">${percent >= 100 ? 'Group Full!' : 'Hurry up! Join before the group fills up.'}</p>
+        </div>`;
+    }
+    document.getElementById('occupancyContainer').innerHTML = occupancyHtml;
     const approvedInst = await supabaseRequest('shine_installments?status=eq.approved&select=amount');
     const totalInstCash = (approvedInst && !approvedInst.error) ? approvedInst.reduce((sum, r) => sum + (Number(r.amount) || 0), 0) : 0;
     if(document.getElementById('cnt-pending')) document.getElementById('cnt-pending').innerText = pending.length;
@@ -1817,10 +1863,13 @@ async function uploadNotePhoto(input) {
     async function renderAdmin(type, btn) {
         document.querySelectorAll('.admin-btn').forEach(b => b.classList.remove('active'));
         if(btn) btn.classList.add('active');
-        document.getElementById('adminDataList').innerHTML = "<p style='text-align:center; padding:20px;'>Loading...</p>";
-        
-        const res = await supabaseRequest('shine_members?select=*');
-        const data = Array.isArray(res) ? res : globalData.members;
+        const listCont = document.getElementById('adminDataList');
+        listCont.innerHTML = "<p style='text-align:center; padding:20px;'>Loading...</p>";
+        let data = globalData.members;
+        if(type === 'pending' || type === 'approved') {
+            const res = await supabaseRequest(`shine_members?status=eq.${type}&select=*`);
+            if(!res.error) data = res;
+        }
         let html = "";
         let list = [];
         if(type === 'pending') list = data.filter(m => m.status === 'pending' && m.kyc_status !== 'pending');
@@ -1936,7 +1985,7 @@ async function uploadNotePhoto(input) {
                     <p><i class="fas fa-map-marker-alt" style="color:#00d2ff; width:20px;"></i> <b>City:</b> ${m.city || 'N/A'}</p>
                     <p><i class="fas fa-home" style="color:#00d2ff; width:20px;"></i> <b>Address:</b> ${m.address || 'N/A'}</p>
                     <p><i class="fas fa-id-card" style="color:#00d2ff; width:20px;"></i> <b>CNIC:</b> ${m.cnic || 'N/A'}</p>
-                    <p><i class="fas fa-money-bill" style="color:#00d2ff; width:20px;"></i> <b>Amount:</b> Rs ${m.payment || 0}</p>
+                    <p><i class="fas fa-money-bill-wave" style="color:#28a745; width:20px;"></i> <b>Reg Payment:</b> <strong style="color:#28a745;">Rs ${m.payment || 0}</strong></p>
                     <p style="margin-top:10px; color:#ffcc00; font-weight:bold;">Payment Screenshot:</p>
                     ${payProof}
                 </div>
@@ -1952,17 +2001,46 @@ async function uploadNotePhoto(input) {
                     <button class="btn-reject" style="flex:1; padding:12px;" onclick="adminAction('${m.id}', 'delete')">DELETE</button>
                 </div>
             </div>`;
-        }); document.getElementById('adminDataList').innerHTML = html || "<p style='text-align:center; opacity:0.5; font-size:0.8rem;'>No records found</p>";
-        updateStats();
+        }); 
+        document.getElementById('adminDataList').innerHTML = html || "<p style='text-align:center; opacity:0.5; font-size:0.8rem;'>No records found</p>";
     }
+async function addDailyPay(memberId) {
+    const amtInput = document.getElementById(`dailyAmt_${memberId}`);
+    const amt = amtInput.value;
+    if(!amt || amt <= 0) return;
+    const cleanId = memberId.toString().includes('SS-') ? memberId : 'SS-' + memberId;
+    const payload = { member_id: cleanId, amount: parseInt(amt), timestamp: new Date().toISOString() };
+    const res = await supabaseRequest('shine_daily_payments', 'POST', payload);
+    if(res && !res.error) {
+        const allDaily = await supabaseRequest(`shine_daily_payments?member_id=eq.${cleanId}&select=amount`);
+        const total = allDaily.reduce((s, p) => s + p.amount, 0);
+        const paidInst = await supabaseRequest(`shine_installments?member_id=eq.${cleanId}&status=eq.approved&select=month_number`);
+        const lastPaidMonth = paidInst.length > 0 ? Math.max(...paidInst.map(i => i.month_number)) : 1;
+        const expectedMonthsPaid = Math.floor(total / 5000) + 1;
+        if (expectedMonthsPaid > lastPaidMonth) {
+            for (let m = lastPaidMonth + 1; m <= expectedMonthsPaid; m++) {
+                await supabaseRequest('shine_installments', 'POST', {
+                    member_id: cleanId,
+                    month_number: m,
+                    amount: 5000,
+                    status: 'approved',
+                    timestamp: Date.now()
+                });
+            }
+        }
+        alert("Payment Added Successfully");
+        amtInput.value = '';
+        fetchAllData();
+    } else {
+        alert("Database Error: " + res.message);
+    }
+}
 async function approveInstallment(id) {
     const res = await supabaseRequest(`shine_installments?id=eq.${id}`, 'PATCH', { status: 'approved' });
     if(res && !res.error) {
         alert("Installment Approved");
         fetchAllData();
         renderAdmin('installment_req');
-    } else {
-        alert("Error: " + res.message);
     }
 }
 
@@ -1970,30 +2048,11 @@ async function handleClaim(claimId, status) {
     const res = await supabaseRequest(`shine_claims?id=eq.${claimId}`, 'PATCH', { status: status });
     if(res && !res.error) {
         alert('Claim ' + status);
-        renderAdmin('pending_payment', document.querySelector("button[onclick*='pending_payment']"));
+        renderAdmin('pending_payment');
     }
 }
 
 async function adminAction(id, action) {
-    const element = document.querySelector(`button[onclick*="'${id}'"]`)?.closest('.admin-list-item');
-async function addDailyPay(memberId) {
-        const amt = document.getElementById(`dailyAmt_${memberId}`).value;
-        if(!amt || amt <= 0) return;
-        const payload = { member_id: memberId, amount: parseInt(amt), timestamp: new Date().toISOString() };
-        const res = await supabaseRequest('shine_daily_payments', 'POST', payload);
-        if(res && !res.error) {
-            const allDaily = await supabaseRequest(`shine_daily_payments?member_id=eq.${memberId}&select=amount`);
-            const total = allDaily.reduce((s, p) => s + p.amount, 0);
-            const monthNum = Math.floor(total / 5000) + 1;
-            if(total % 5000 === 0 || (total >= monthNum * 5000)) {
-                await supabaseRequest('shine_installments', 'POST', {
-                    member_id: memberId, month_number: monthNum, amount: 5000, status: 'approved', timestamp: Date.now()
-                });
-            }
-            alert("Payment Added");
-            renderAdmin('pending');
-        }
-    }
     if (action === 'approve' || action === 'delete' || action === 'reject_kyc') {
         if (action === 'delete' && !confirm('Are you sure?')) return;
         if (element && action !== 'approve') element.remove();
@@ -2102,8 +2161,8 @@ async function addDailyPay(memberId) {
                 document.getElementById('dailyPayText').innerText = `Rs ${currentMonthTotal} / 5,000`;
                 document.getElementById('dailyProgressBar').style.width = (currentMonthTotal / 5000 * 100) + '%';
                 let historyHtml = "";
-                dailyRes.slice(-3).reverse().forEach(p => {
-                    historyHtml += `<div style="display:flex; justify-content:space-between;"><span>${new Date(p.timestamp).toLocaleString()}</span><span>Rs ${p.amount}</span></div>`;
+                dailyRes.reverse().forEach(p => {
+                    historyHtml += `<div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(40,167,69,0.1); padding:4px 0;"><span>${new Date(p.timestamp).toLocaleDateString()} ${new Date(p.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span><span>Rs ${p.amount}</span></div>`;
                 });
                 document.getElementById('recentDailyPayments').innerHTML = historyHtml;
             }
@@ -2215,12 +2274,10 @@ if (!email || !password) { alert("Email and Password required"); return; }
         const data = await res.json();
         const session = data.session || data;
         if (session.access_token || data.user) {
-            const token = session.access_token;
-            const user = data.user || session.user;
-            localStorage.setItem('shine_token', token);
-            localStorage.setItem('shine_user', JSON.stringify(user));
+            localStorage.setItem('shine_token', session.access_token);
+            localStorage.setItem('shine_user', JSON.stringify(data.user || session.user));
             document.getElementById('authScreen').style.display = 'none';
-            fetchAllData();
+            showSplash();
         } else {
             const errDetail = data.msg || data.message || "";
             const errHint = data.hint ? `\nHint: ${data.hint}` : "";
@@ -2231,8 +2288,7 @@ if (!email || !password) { alert("Email and Password required"); return; }
     }
 
     function logout() {
-        localStorage.removeItem('shine_token');
-        localStorage.removeItem('shine_user');
+        localStorage.clear();
         location.reload();
     }
 let selectedMonth = 0;
@@ -2252,38 +2308,31 @@ let selectedMonth = 0;
         if(!fileInput.files[0]) { alert("Please upload payment screenshot"); return; }
         
         btn.disabled = true;
-        btn.innerText = "Processing...";
+        btn.innerText = "Sending...";
         
         const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
         const reader = new FileReader();
-        reader.onload = async (e) => {
-            try {
-                const base64 = e.target.result;
-                const payload = {
-                    member_id: user.id,
-                    month_number: selectedMonth,
-                    proof_img: base64,
-                    method: document.getElementById('instMethod').value,
-                    amount: 5000,
-                    status: 'pending',
-                    timestamp: Date.now()
-                };
-                const res = await supabaseRequest('shine_installments', 'POST', payload);
-                if(res && !res.error) {
-                    alert("Installment Submitted Successfully!");
-                    document.getElementById('payModal').style.display = 'none';
-                    window.open(`https://wa.me/923005534198?text=${encodeURIComponent("*Installment Payment*\nID: " + user.id + "\nMonth: " + selectedMonth + "\nName: " + user.name)}`, '_blank');
-                    renderInstallmentCard();
-                } else {
-                    alert("Database Error: " + (res.message || "Unknown error"));
-                    console.error("Supabase Error:", res);
-                }
-            } catch (err) {
-                alert("System Error: " + err.message);
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "Submit & Send WhatsApp";
-            }
+        reader.onload = (e) => {
+            const base64 = e.target.result;
+            const payload = {
+                member_id: user.id,
+                month_number: selectedMonth,
+                proof_img: base64,
+                method: document.getElementById('instMethod').value,
+                amount: 5000,
+                status: 'pending',
+                timestamp: Date.now()
+            };
+            
+            supabaseRequest('shine_installments', 'POST', payload);
+            
+            alert("Request Sent! Admin will verify soon.");
+            document.getElementById('payModal').style.display = 'none';
+            btn.disabled = false;
+            btn.innerText = "Submit";
+            
+            const waMsg = `*Installment Payment*\nID: ${user.id}\nMonth: ${selectedMonth}\nName: ${user.name}`;
+            window.open(`https://wa.me/923005534198?text=${encodeURIComponent(waMsg)}`, '_blank');
         };
         reader.readAsDataURL(fileInput.files[0]);
     }
@@ -2294,9 +2343,10 @@ async function renderInstallmentCard() {
         const container = document.getElementById('installmentContent');
         if(!user || !user.id) return;
 
-        const installments = await supabaseRequest(`shine_installments?member_id=eq.${user.id}&status=eq.approved`);
-        const paidMonths = Array.isArray(installments) ? installments.map(ins => ins.month_number) : [];
-        if(user.status === 'approved') paidMonths.push(1);
+        const cachedInst = JSON.parse(localStorage.getItem('inst_cache_' + user.id) || '[]');
+        const installments = await supabaseRequest(`shine_installments?member_id=eq.${user.id}&status=eq.approved&select=month_number`);
+        const paidMonths = Array.isArray(installments) ? installments.map(ins => parseInt(ins.month_number)) : [];
+        if(user.status === 'approved' && !paidMonths.includes(1)) paidMonths.push(1);
 
         let html = `<div class="glass" style="border: 1px solid rgba(0, 210, 255, 0.3); background: linear-gradient(180deg, rgba(0, 51, 102, 0.4), rgba(0, 11, 24, 0.8));">
             <div style="text-align:center; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:15px;">
@@ -2306,23 +2356,24 @@ async function renderInstallmentCard() {
             <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">`;
         
         for(let i=1; i<=15; i++) {
-            const paid = paidMonths.includes(i);
-            html += `<div style="background:${paid ? 'rgba(40, 167, 69, 0.15)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${paid ? '#28a745' : 'rgba(255,255,255,0.1)'}; padding:12px 5px; border-radius:15px; text-align:center;">
+            const isPaid = paidMonths.includes(i);
+            html += `<div style="background:${isPaid ? 'rgba(40, 167, 69, 0.15)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${isPaid ? '#28a745' : 'rgba(255,255,255,0.1)'}; padding:12px 5px; border-radius:15px; text-align:center;">
                 <span style="font-size:0.5rem; opacity:0.5; display:block;">MONTH ${i}</span>
-                <h4 style="margin:5px 0; font-size:0.8rem; color:${paid ? '#28a745' : '#fff'}">${paid ? 'PAID ✔️' : 'DUE'}</h4>
-                <div style="font-size:1.1rem; margin-bottom:5px;">${paid ? '<i class="fas fa-check-circle" style="color:#28a745;"></i>' : '<i class="fas fa-circle-notch" style="opacity:0.2;"></i>'}</div>
-                ${!paid ? `<button onclick="openPayModal(${i})" style="background:#00d2ff; border:none; color:#000; font-size:0.6rem; padding:4px 8px; border-radius:5px; font-weight:bold;">Pay Now</button>` : ''}
+                <h4 style="margin:5px 0; font-size:0.8rem; color:${isPaid ? '#28a745' : '#fff'}">${isPaid ? 'PAID ✔️' : 'DUE'}</h4>
+                <div style="font-size:1.1rem; margin-bottom:5px;">${isPaid ? '<i class="fas fa-check-circle" style="color:#28a745;"></i>' : '<i class="fas fa-circle-notch" style="opacity:0.2;"></i>'}</div>
+                ${!isPaid ? `<button onclick="openPayModal(${i})" style="background:#00d2ff; border:none; color:#000; font-size:0.6rem; padding:4px 8px; border-radius:5px; font-weight:bold;">Pay Now</button>` : ''}
             </div>`;
-        }
+        } 
         html += `</div></div>`;
         container.innerHTML = html;
     }
-    window.onload = async () => {
+    window.onload = () => {
         const token = localStorage.getItem('shine_token');
         if (token) {
             document.getElementById('authScreen').style.display = 'none';
-            fetchAllData();
-            autoLoadMyDash();
+            showSplash();
+        } else {
+            document.getElementById('authScreen').style.display = 'flex';
         }
     };
 </script>
