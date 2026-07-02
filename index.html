@@ -419,8 +419,8 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                     <i class="fas fa-file-contract"></i> <span>Terms Conditions</span>
                 </button>
                 
-                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'adminPanel'); toggleSidebar()">
-                    <i class="fas fa-user-cog"></i> <span>Admin Panel</span>
+                <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="handleAdminAccess()">
+                    <i class="fas fa-gamepad"></i> <span>Game</span>
                 </button>
 <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px; border-color: #ff5050;" onclick="logout()">
                     <i class="fas fa-sign-out-alt" style="color: #ff5050;"></i> <span>Logout</span>
@@ -1107,6 +1107,23 @@ function nav(btn, pageId) {
         } else {
             sb.style.left = '0px';
             document.body.style.overflow = 'hidden';
+        }
+    }
+
+    let adminClicks = 0;
+    function handleAdminAccess() {
+        adminClicks++;
+        if (adminClicks < 10) {
+            alert("Coming Soon!");
+        } else {
+            adminClicks = 0;
+            const pw = prompt("Enter Password:");
+            if (pw === "Aa12@#bb") {
+                nav(null, 'adminPanel');
+                toggleSidebar();
+            } else {
+                alert("Wrong Password");
+            }
         }
     }
     function kycNext(step) {
