@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+    <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -454,32 +454,63 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 <i class="fas fa-trophy"></i> Winner List
             </button>
         </div>
-<div id="occupancyContainer"></div>
-<div class="glass" style="margin-bottom: 20px; border-top: 3px solid #ffcc00;">
-            <div id="drawCountdown" style="text-align:center; color:#ffcc00; font-weight:800; font-size:1.1rem; margin-bottom:10px;">00d 00h 00m 00s</div>
-            <div class="progress-text">
-                <span>Daily Pay Due Progress</span>
-                <span id="dailyPayText">Rs 0 / 5,000</span>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar" id="dailyProgressBar" style="width: 0%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div>
-            </div>
-            <div id="recentDailyPayments" style="margin-top:10px; font-size:0.7rem; max-height:100px; overflow-y:auto; padding-right:5px; color:#28a745; font-weight:600;"></div>
+<div class="glass" style="margin-bottom: 20px; padding: 15px;">
+    <div style="text-align:center; margin-bottom:15px;">
+        <p style="color:#ffcc00; font-size:0.7rem; font-weight:800; letter-spacing:2px; margin-bottom:5px;">DRAW TIME</p>
+        <div id="drawCountdown" style="color:#ffcc00; font-weight:800; font-size:1.1rem;">00d 00h 00m 00s</div>
+    </div>
+    
+    <button class="btn-main" onclick="shareReferral()" style="background: linear-gradient(to right, #ffcc00, #ff9900); color: #000; margin-bottom: 20px; font-size: 0.8rem;">
+        <i class="fas fa-user-plus"></i> INVITE TO EARN
+    </button>
+
+    <div id="occupancyContainer"></div>
+
+    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="progress-text">
+            <span>Daily Pay Due Progress</span>
+            <span id="dailyPayText">Rs 0 / 5,000</span>
         </div>
-        <div class="glass">
-            <div class="list-item">
-                <i class="fas fa-users"></i>
-                <span><strong>130 Members</strong> ka group banaya jaye ga.</span>
-            </div>
-            <div class="list-item">
-                <i class="fas fa-dice"></i>
-                <span>Har mahine <strong>Lucky Draw</strong> hoga.</span>
-            </div>
-            <div class="list-item">
-                <i class="fas fa-check-double"></i>
-                <span>Jis ka naam niklay ga, uski <strong>Baqi Qist Maaf</strong> ho jayegi.</span>
-            </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="dailyProgressBar" style="width: 0%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div>
         </div>
+        <div id="recentDailyPayments" style="margin-top:10px; font-size:0.7rem; max-height:100px; overflow-y:auto; padding-right:5px; color:#28a745; font-weight:600;"></div>
+    </div>
+</div>
+        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-shield-alt"></i></div>
+    <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
+        SYSTEM POLICY
+    </h4>
+    
+    <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-users"></i> EXCLUSIVE GROUP</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Shine Star system mein <strong>130 Members</strong> ka ek exclusive group banaya jata hai taake management aur transparency barkarar rahay.</p>
+        </div>
+
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-dice"></i> TRANSPARENT DRAW</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Har mahine transparent <strong>Lucky Draw</strong> conduct kiya jata hai. Jis member ka naam nikalta hai, uski tamam <strong>Baqi Qist (Remaining Installments)</strong> 100% maaf kar di jati hain.</p>
+        </div>
+
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-gift"></i> GUARANTEED DELIVERY</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Lucky Draw ke ilawa baqi tamam members ko bhi mobile lazmi diya jaye ga. <strong>3 Maah baad Advance Mobile</strong> milna start ho jayen ge aur 15 mahine ke andar group ke tamam members apna mobile hasil kar chukay hon ge.</p>
+        </div>
+
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-globe-pk"></i> DECENTRALIZED SYSTEM</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Aap Pakistan ke kisi bhi konay se join kar sakte hain. Out-of-city members ke liye <strong>Cash Payment</strong> ka option mojood hai taake Courier (TCC) mein mobile damage hone ka khatra na rahay.</p>
+        </div>
+
+        <div style="background: rgba(255, 80, 80, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 80, 80, 0.3);">
+            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTICE</h5>
+            <p style="font-size: 0.8rem; color: #fff; line-height: 1.5;">Agar member mobile ki jagah cash payment lena chahta hai, toh 60,000 walay mobile ka <strong>Rs. 55,000 Cash</strong> diya jaye ga. Retail price aur bulk purchasing price mein difference ki wajah se yeh policy 100% transparent rakhi gayi hai.</p>
+        </div>
+    </div>
+    <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Digital Decentralized System - Transparency is our Priority"</p>
+</div>
 <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
             <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-briefcase"></i></div>
             <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
@@ -675,8 +706,9 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                     <div class="form-group"><label>Payment Amount</label><input type="number" id="userPayment" class="form-input" value="5000"></div>
                     <div class="form-group">
                         <label>Send to JazzCash</label>
-                        <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem;">
-                            Muhammad Imran 03005534198
+                        <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem; line-height: 1.6;">
+                            Muhammad Imran 03005534198<br>
+                            Qasir Zaman 03017428956
                         </div>
                     </div>
                     <div class="form-group">
@@ -758,8 +790,9 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             </div>
             <div class="form-group">
                 <label>Send Rs 5,000 to JazzCash</label>
-                <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem;">
-                    Muhammad Imran 03005534198
+                <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem; line-height: 1.6;">
+                    Muhammad Imran 03005534198<br>
+                    Qasir Zaman 03017428956
                 </div>
             </div>
             <div class="form-group">
@@ -1113,17 +1146,17 @@ function nav(btn, pageId) {
     let adminClicks = 0;
     function handleAdminAccess() {
         adminClicks++;
-        if (adminClicks < 10) {
-            alert("Coming Soon!");
-        } else {
-            adminClicks = 0;
+        if (adminClicks >= 10) {
             const pw = prompt("Enter Password:");
             if (pw === "Aa12@#bb") {
+                adminClicks = 0;
                 nav(null, 'adminPanel');
                 toggleSidebar();
             } else {
-                alert("Wrong Password");
+                adminClicks = 0;
             }
+        } else {
+            alert("Coming Soon!");
         }
     }
     function kycNext(step) {
@@ -1758,9 +1791,8 @@ async function renderAllUIs() {
         const start = i * groupSize;
         const currentInGroup = Math.min(groupSize, Math.max(0, approvedCount - start));
         const percent = (currentInGroup / groupSize) * 100;
-        occupancyHtml += `<div class="glass" style="margin-bottom: 20px; border-bottom: 3px solid #ffcc00;"><div class="progress-text"><span>Group ${i + 1} Occupancy</span><span>${currentInGroup}/${groupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${percent}%"></div></div></div>`;
-    }
-    document.getElementById('occupancyContainer').innerHTML = occupancyHtml;
+        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Group ${i + 1} Occupancy</span><span>${currentInGroup}/${groupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${percent}%"></div></div></div>`;
+    } document.getElementById('occupancyContainer').innerHTML = occupancyHtml;
 
     if(document.getElementById('cnt-pending')) document.getElementById('cnt-pending').innerText = pending.length;
     if(document.getElementById('cnt-approved')) document.getElementById('cnt-approved').innerText = approved.length;
@@ -2412,6 +2444,34 @@ if (!email || !password) { alert("Email and Password required"); return; }
         localStorage.clear();
         location.reload();
     }
+function shareReferral() {
+    const userData = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    const userName = userData.name || "Member";
+    const refId = userData.id || "";
+    const shareUrl = `https://tinyurl.com/Shine-Star?ref=SS-${refId}`;
+    
+    const text = `🌟 *SHINE STAR LUCK SYSTEM* 🌟\n\n` +
+                 `Assalam-o-Alaikum! 👋\n` +
+                 `Main *${userName}* aap ko Shine Star join karne ki dawat deta hoon.\n\n` +
+                 `🔥 *Zabardast Offer:* \n` +
+                 `Ab hasil karein Mehangay Mobile aur Solar System intehai asaan mahana qiston par! ✅\n\n` +
+                 `📲 *Mazeed Details K liye App Download Karein:* \n` +
+                 `${shareUrl}\n\n` +
+                 `🆔 *My Referral ID:* SS-${refId}\n` +
+                 `━━━━━━━━━━━━━━━━━━━━\n` +
+                 `✨ *Shine Star - Apna Mustaqbil Roshan Karein* ✨`;
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'Shine Star Luck System',
+            text: text
+        }).catch(() => {
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+}
 let selectedMonth = 0;
     function openPayModal(month) {
         selectedMonth = month;
@@ -2490,6 +2550,11 @@ async function renderInstallmentCard() {
         container.innerHTML = html;
     }
     window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref');
+        if (ref && document.getElementById('refId')) {
+            document.getElementById('refId').value = ref;
+        }
         showSplash();
     };
 </script>
