@@ -391,7 +391,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                     <span class="vibrate-star">⭐</span>
                     <span>STAR</span>
                 </h1>
-                <p style="color: #00d2ff; font-size: 0.8rem; font-weight: 600; margin-top: -2px;">Luck instalment</p>
+                <p style="color: #00d2ff; font-size: 0.8rem; font-weight: 600; margin-top: -2px;">instalment</p>
             </div>
             <button onclick="toggleSidebar()" style="position: absolute; left: 0; background: none; border: none; color: #ffcc00; font-size: 1.5rem; cursor: pointer; z-index: 10;">
                 <i class="fas fa-bars"></i>
@@ -428,31 +428,97 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             </div>
         </div>
         <div class="glass hero-card">
-            <h2>MHENGA MOBILE LENA AB HOWA ASAAN</h2>
+            
+            <h2 style="font-size: 1.3rem;">MHENGA SOLAR SYSTEM OR MOBILE LENA HOWA ASAAN</h2>
+            <div id="notePhotoBox" style="display:none; margin: 20px 0;">
+                <div class="glass" style="padding:0; overflow:hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
+                    <img id="notePhotoImg" src="" style="width:100%; height:auto; display:block;">
+                </div>
+            </div>
             <div id="homePhotoBox" style="display:none; margin: 20px 0;">
                 <div class="glass" style="padding:0; overflow:hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
                     <img id="homePhotoImg" src="" style="width:100%; height:auto; display:block;">
                 </div>
             </div>
-            <p style="font-size: 0.85rem; opacity: 0.9;">60,000 Wala mobile sirf 5,000 ki qist mein hasil karen.</p>
+            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 20px; margin-bottom: 20px;">
+                <h3 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">Solar Specifications</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; text-align: center;">
+                    <div>
+                        <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">PREMIUM SOLAR PANELS</h5>
+                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">4 Plates High Quality (585 Watt Each) jo dhoop aur badal dono mein behtareen performance dein gi.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">SMART HYBRID INVERTER</h5>
+                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Ek High Quality Inverter jo aapke ghar ka pora load bardasht karne ki salahiyat rakhta hai.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: #ffcc00; font-size: 0.9rem; font-weight: 700;">LOAD CAPACITY</h5>
+                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Aap is system par AC, Freezer, Water Motor, aur Iron (Press) jese bhari appliances step-by-step asani se chala sakte hain.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; opacity: 0.9;">1,50,000 Wala Solar sirf 6,000 ki qist mein hasil karen.</p>
             <div class="price-box">
                 <div class="price-item">
                     <span>Monthly</span>
-                    <strong>5,000</strong>
+                    <strong>6,000</strong>
                 </div>
                 <div class="price-item">
                     <span>Duration</span>
-                    <strong>15 Months</strong>
+                    <strong>30 Months</strong>
                 </div>
                 <div class="price-item">
                     <span>Total</span>
-                    <strong>75,000</strong>
+                    <strong>1,80,000</strong>
                 </div>
             </div>
-            <button class="btn-main" onclick="nav(document.querySelectorAll('.nav-btn')[2], 'form')">JOIN GROUP NOW</button>
-            <button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; margin-bottom: 20px; width: 100%;" onclick="nav(null, 'winnerListPage')">
+            <button class="btn-main" onclick="openRegistration('Solar', 6000)">JOIN NOW</button>
+            <button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; width: 100%;" onclick="nav(null, 'winnerListPage')">
                 <i class="fas fa-trophy"></i> Winner List
             </button>
+            <div style="margin: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                
+                <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">Mobile Specifications</h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px; text-align: center;">
+                        <div>
+                            <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">PREMIUM SMARTPHONES</h5>
+                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Aap Rs. 60,000 ki maliyat ka koi bhi behtareen mobile phone hasil kar sakte hain.</p>
+                        </div>
+                        <div>
+                            <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">TOP BRANDS (OPPO & VIVO)</h5>
+                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Oppo aur Vivo jese brands apne shandaar camera aur fast performance ki wajah se poori dunya mein mashhoor hain, jo aap hamare system se asani se hasil kar sakte hain.</p>
+                        </div>
+                        <div>
+                            <h5 style="color: #ffcc00; font-size: 0.9rem; font-weight: 700;">YOUR CHOICE, OUR PRIORITY</h5>
+                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Market se apni pasand ka koi bhi model select karen jo 60,000 ki range mein ho, Shine Star aapko wahi mobile provide kare ga.</p>
+                        </div>
+                        <div style="border-top: 1px dashed rgba(255,255,255,0.1); pt-10;">
+                            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 700;">CASH-OUT POLICY (OUT OF CITY)</h5>
+                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Agar aap out-of-city hain ya mobile ki bajaye cash lena chahte hain, toh aapko cash payment ka option diya jaye ga. Humara system 100% transparency aur sachai par mabni hai.</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; opacity: 0.9;">60,000 Wala mobile sirf 5,000 ki qist mein hasil karen.</p>
+                <div class="price-box">
+                    <div class="price-item">
+                        <span>Monthly</span>
+                        <strong>5,000</strong>
+                    </div>
+                    <div class="price-item">
+                        <span>Duration</span>
+                        <strong>15 Months</strong>
+                    </div>
+                    <div class="price-item">
+                        <span>Total</span>
+                        <strong>75,000</strong>
+                    </div>
+                </div>
+                <button class="btn-main" onclick="openRegistration('Mobile', 5000)">JOIN GROUP NOW</button>
+                <button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; margin-bottom: 20px; width: 100%;" onclick="nav(null, 'winnerListPage')">
+                    <i class="fas fa-trophy"></i> Winner List
+                </button>
+            </div>
         </div>
 <div class="glass" style="margin-bottom: 20px; padding: 15px;">
     <div style="text-align:center; margin-bottom:15px;">
@@ -461,7 +527,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
     </div>
     
     <button class="btn-main" onclick="shareReferral()" style="background: linear-gradient(to right, #ffcc00, #ff9900); color: #000; margin-bottom: 20px; font-size: 0.8rem;">
-        <i class="fas fa-user-plus"></i> INVITE TO EARN
+        <i class="fas fa-user-plus"></i> INVITE TO EARN FEE JOIN 1000
     </button>
 
     <div id="occupancyContainer"></div>
@@ -476,42 +542,8 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         </div>
         <div id="recentDailyPayments" style="margin-top:10px; font-size:0.7rem; max-height:100px; overflow-y:auto; padding-right:5px; color:#28a745; font-weight:600;"></div>
     </div>
-</div>
-        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-shield-alt"></i></div>
-    <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
-        SYSTEM POLICY
-    </h4>
-    
-    <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-users"></i> EXCLUSIVE GROUP</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Shine Star system mein <strong>130 Members</strong> ka ek exclusive group banaya jata hai taake management aur transparency barkarar rahay.</p>
-        </div>
-
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-dice"></i> TRANSPARENT DRAW</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Har mahine transparent <strong>Lucky Draw</strong> conduct kiya jata hai. Jis member ka naam nikalta hai, uski tamam <strong>Baqi Qist (Remaining Installments)</strong> 100% maaf kar di jati hain.</p>
-        </div>
-
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-gift"></i> GUARANTEED DELIVERY</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Lucky Draw ke ilawa baqi tamam members ko bhi mobile lazmi diya jaye ga. <strong>3 Maah baad Advance Mobile</strong> milna start ho jayen ge aur 15 mahine ke andar group ke tamam members apna mobile hasil kar chukay hon ge.</p>
-        </div>
-
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-globe-pk"></i> DECENTRALIZED SYSTEM</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Aap Pakistan ke kisi bhi konay se join kar sakte hain. Out-of-city members ke liye <strong>Cash Payment</strong> ka option mojood hai taake Courier (TCC) mein mobile damage hone ka khatra na rahay.</p>
-        </div>
-
-        <div style="background: rgba(255, 80, 80, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 80, 80, 0.3);">
-            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTICE</h5>
-            <p style="font-size: 0.8rem; color: #fff; line-height: 1.5;">Agar member mobile ki jagah cash payment lena chahta hai, toh 60,000 walay mobile ka <strong>Rs. 55,000 Cash</strong> diya jaye ga. Retail price aur bulk purchasing price mein difference ki wajah se yeh policy 100% transparent rakhi gayi hai.</p>
-        </div>
-    </div>
-    <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Digital Decentralized System - Transparency is our Priority"</p>
-</div>
-<div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
+</div> 
+     <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
             <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-briefcase"></i></div>
             <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
                 HOW TO EARN
@@ -544,7 +576,8 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             </div>
             <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Jitni aapki mehnat, utna aapka munafa. Shine Star ke sath apna mustaqbil sanwaren."</p>
         </div>
-        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center;">
+
+<div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center;">
             <div style="display: flex; flex-direction: column; gap: 40px;">
                 <div>
                     <h4 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;"><i class="fas fa-motorcycle"></i> CD-70 BIKE OFFER</h4>
@@ -562,92 +595,68 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 </div>
             </div>
         </div>
-<div class="glass hero-card" style="margin-top: 20px;">
-            <h4 style="color: #00d2ff; font-size: 0.8rem; text-transform: uppercase;">Solar Offer</h4>
-            <h2 style="font-size: 1.3rem;">AB MHENGA SOLAR SYSTEM LENA HOWA ASAAN</h2>
-            <div id="notePhotoBox" style="display:none; margin: 20px 0;">
-                <div class="glass" style="padding:0; overflow:hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
-                    <img id="notePhotoImg" src="" style="width:100%; height:auto; display:block;">
-                </div>
-            </div>
-            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 20px; margin-bottom: 20px;">
-                <h3 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">System Specifications</h3>
-                <div style="display: flex; flex-direction: column; gap: 15px; text-align: center;">
-                    <div>
-                        <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">PREMIUM SOLAR PANELS</h5>
-                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">4 Plates High Quality (585 Watt Each) jo dhoop aur badal dono mein behtareen performance dein gi.</p>
-                    </div>
-                    <div>
-                        <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">SMART HYBRID INVERTER</h5>
-                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Ek High Quality Inverter jo aapke ghar ka pora load bardasht karne ki salahiyat rakhta hai.</p>
-                    </div>
-                    <div>
-                        <h5 style="color: #ffcc00; font-size: 0.9rem; font-weight: 700;">LOAD CAPACITY</h5>
-                        <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Aap is system par AC, Freezer, Water Motor, aur Iron (Press) jese bhari appliances step-by-step asani se chala sakte hain.</p>
-                    </div>
-                </div>
-            </div>
-            <p style="font-size: 0.85rem; opacity: 0.9;">1,50,000 Wala Solar sirf 6,000 ki qist mein hasil karen.</p>
-            <div class="price-box">
-                <div class="price-item">
-                    <span>Monthly</span>
-                    <strong>6,000</strong>
-                </div>
-                <div class="price-item">
-                    <span>Duration</span>
-                    <strong>30 Months</strong>
-                </div>
-                <div class="price-item">
-                    <span>Total</span>
-                    <strong>1,80,000</strong>
-                </div>
-            </div>
-            <button class="btn-main" onclick="alert('Coming Soon!')">JOIN NOW</button>
+<div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden; margin-top: 20px;">
+    <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-solar-panel"></i></div>
+    <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
+        SOLAR SYSTEM POLICY
+    </h4>
+    
+    <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-users"></i> EXCLUSIVE SOLAR GROUP</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Shine Star Solar system mein <strong>200 Members</strong> ka ek exclusive group banaya jata hai.</p>
         </div>
 
-        <div class="glass">
-            <div class="list-item">
-                <i class="fas fa-users"></i>
-                <span><strong>200 Members</strong> ka group banaya jaye ga.</span>
-            </div>
-            <div class="list-item">
-                <i class="fas fa-dice"></i>
-                <span>Har mahine <strong>Lucky Draw</strong> hoga.</span>
-            </div>
-            <div class="list-item">
-                <i class="fas fa-check-double"></i>
-                <span>Jis ka naam niklay ga, uski <strong>Baqi Qist Maaf</strong> ho jayegi.</span>
-            </div>
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-dice"></i> TRANSPARENT SOLAR DRAW</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Har mahine transparent <strong>Lucky Draw</strong> conduct kiya jata hai. Jis member ka naam nikalta hai, uski tamam <strong>Baqi Qist (Remaining Installments)</strong> 100% maaf kar di jati hain.</p>
         </div>
 
-        <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center;">
-            <div style="display: flex; flex-direction: column; gap: 35px;">
-                <div>
-                    <h4 style="color: #ffcc00; font-size: 1.3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">APNA SOLAR APNI BIJLI</h4>
-                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Din ba din ki mehangai ne gareeb ka jeena mushkil kar diya hai. Bijli ke bhari taxes ne har ghar ko pareshan kar rakha hai. Ab waqt hai thori si bachat kar ke apna solar system lagane ka, taake bijli ke billon se hamesha ke liye jaan choote.</p>
-                </div>
-
-                <div>
-                    <h5 style="color: #00d2ff; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">ZABARDAST OFFER</h5>
-                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Shine Star laya hai ek zabardast offer! Sirf <strong>6,000 mahana qist</strong> mein apna solar system lagayein jo aapke ghar ki har zaroorat ko pura karega. Is qist ko bijli ka bill samajh kar pay karein aur apna mustaqbil roshan karein.</p>
-                </div>
-
-                <div>
-                    <h5 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">LUCK AZMAYEIN AUR BACHAT KAREIN</h5>
-                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Jis member ka naam draw mein nikal aaye, uski baqi qist maaf! Pehle winner ko 1,80,000 ka solar sirf 6,000 mein mil sakta hai. Agar aapka naam 25th number par bhi aata hai, tab bhi aapko solar qiston par sasta parega.</p>
-                </div>
-
-                <div>
-                    <h5 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">EXTRA CASH INAAMAT</h5>
-                    <p style="font-size: 0.85rem; line-height: 1.7; color: #e0e0e0; opacity: 0.9;">Agar aapka luck draw mein late aata hai, toh Shine Star aapko deta hai cash inaam: 26th No par 20,000, 27th No par 25,000, 28th No par 30,000 aur 29th No par 40,000 Cash inaam diya jaye ga.</p>
-                </div>
-
-                <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 204, 0, 0.3);">
-                    <h5 style="color: #ffcc00; font-size: 1rem; font-weight: 800; text-transform: uppercase;">LAST MEMBER OFFER</h5>
-                    <p style="font-size: 0.85rem; color: #fff; font-weight: 700;">SOLAR SYSTEM + 50,000 CASH INAAM</p>
-                </div>
-            </div>
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-money-bill-wave"></i> EXTRA CASH INAAMAT</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Agar aapka luck draw mein late aata hai, toh Shine Star aapko cash inaam deta hai: 26th No par 20,000, 27th No par 25,000, 28th No par 30,000 aur 29th No par 40,000 Cash inaam diya jaye ga.</p>
         </div>
+
+        <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 204, 0, 0.3);">
+            <h5 style="color: #ffcc00; font-size: 1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-gift"></i> LAST MEMBER OFFER</h5>
+            <p style="font-size: 0.85rem; color: #fff; font-weight: 700;">SOLAR SYSTEM + 50,000 CASH INAAM</p>
+        </div>
+    </div>
+</div>
+<div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-shield-alt"></i></div>
+    <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
+        MOBILE SYSTEM POLICY
+    </h4>
+    
+    <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-users"></i> EXCLUSIVE GROUP</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Shine Star system mein <strong>130 Members</strong> ka ek exclusive group banaya jata hai taake management aur transparency barkarar rahay.</p>
+        </div>
+
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-dice"></i> TRANSPARENT DRAW</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Har mahine transparent <strong>Lucky Draw</strong> conduct kiya jata hai. Jis member ka naam nikalta hai, uski tamam <strong>Baqi Qist (Remaining Installments)</strong> 100% maaf kar di jati hain.</p>
+        </div>
+
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-gift"></i> GUARANTEED DELIVERY</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Lucky Draw ke ilawa baqi tamam members ko bhi mobile lazmi diya jaye ga. <strong>3 Maah baad Advance Mobile</strong> milna start ho jayen ge aur 15 mahine ke andar group ke tamam members apna mobile hasil kar chukay hon ge.</p>
+        </div>
+
+        <div>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-globe-pk"></i> DECENTRALIZED SYSTEM</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Aap Pakistan ke kisi bhi konay se join kar sakte hain. Out-of-city members ke liye <strong>Cash Payment</strong> ka option mojood hai taake Courier (TCC) mein mobile damage hone ka khatra na rahay.</p>
+        </div>
+
+        <div style="background: rgba(255, 80, 80, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 80, 80, 0.3);">
+            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTICE</h5>
+            <p style="font-size: 0.8rem; color: #fff; line-height: 1.5;">Agar member mobile ki jagah cash payment lena chahta hai, toh osy cash bhe diya jaye ga. Retail price aur bulk purchasing price mein difference ki wajah se yeh policy 100% transparent rakhi gayi hai.</p>
+        </div>
+    </div>
+    <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Digital Decentralized System - Transparency is our Priority"</p>
+</div>
     </div>
 <div id="team" class="page">
         <div class="header" style="position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 0;">
@@ -691,6 +700,10 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Selected Product</label>
+                        <input type="text" id="productType" class="form-input" readonly style="background:rgba(255,255,255,0.1); color:#ffcc00; font-weight:bold;">
                     </div>
                     <div class="form-group"><label>Quantity (Qty)</label><input type="number" id="userQty" class="form-input" value="1"></div>
                     <button class="btn-main" onclick="document.getElementById('formStep1').style.display='none'; document.getElementById('formStep2').style.display='block';">Next Step</button>
@@ -1025,6 +1038,28 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 <i class="fas fa-exclamation-triangle"></i> <span>Profit Requests</span>
                 <small class="count-badge" id="cnt-pending-profit">0</small>
             </button>
+        </div>
+        <div style="margin: 20px 0; border-top: 2px dashed rgba(255,204,0,0.3); padding-top: 10px;">
+            <h4 style="color:#ffcc00; text-align:center; font-size:0.8rem; margin-bottom:10px;">SOLAR MANAGEMENT</h4>
+            <div class="admin-grid">
+                <button class="admin-btn" onclick="renderAdmin('pending_solar', this)">
+                    <i class="fas fa-solar-panel"></i> <span>Solar Pending</span>
+                    <small class="count-badge" id="cnt-pending-solar">0</small>
+                </button>
+                <button class="admin-btn" onclick="renderAdmin('approved_solar', this)">
+                    <i class="fas fa-check-double"></i> <span>Solar Approved</span>
+                    <small class="count-badge" id="cnt-approved-solar" style="background:#28a745">0</small>
+                </button>
+             
+                <button class="admin-btn" onclick="renderAdmin('pending_inst_solar', this)">
+                    <i class="fas fa-file-invoice"></i> <span>Solar Inst Req</span>
+                    <small class="count-badge" id="cnt-inst-solar">0</small>
+                </button>
+                <button class="admin-btn" onclick="renderAdmin('approved_inst_solar', this)">
+                    <i class="fas fa-clipboard-check"></i> <span>Solar Inst App</span>
+                    <small class="count-badge" id="cnt-approved-inst-solar" style="background:#28a745">0</small>
+                </button>
+            </div>
         </div>
 <div class="admin-grid" style="grid-template-columns: 1fr; margin-top: 10px;">
 <div class="admin-grid" style="margin-top: 10px;">
@@ -1406,11 +1441,15 @@ video.srcObject = stream;
                 body: body ? JSON.stringify(body) : null
             };
             const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, options);
-           const data = await response.json();
-            if (!response.ok) return { error: true, message: data.message || "Server Error" };
+            const data = await response.json();
+            if (!response.ok) {
+                console.error('DATABASE_ERROR:', data);
+                return { error: true, message: `DB_ERROR: ${data.message} (Code: ${data.code})`, details: data.details };
+            }
             return data;
         } catch (e) {
-            return { error: true, message: "Network Error: " + e.message };
+            console.error('FETCH_ERROR:', e);
+            return { error: true, message: "CRITICAL_NETWORK_ERROR: " + e.message };
         }
     }
 
@@ -1716,6 +1755,7 @@ async function loadMembers() {
         const newMember = { 
             id: myId, email: user.email, name, phone, address: document.getElementById('userAddress').value, 
             gender: document.getElementById('userGender').value,
+            product_type: currentRegProduct || 'Mobile',
             payment: parseInt(document.getElementById('userPayment').value) || 0, 
             qty: parseInt(document.getElementById('userQty').value) || 1, 
             payment_method: document.getElementById('userMethod').value,
@@ -1728,6 +1768,7 @@ async function loadMembers() {
             if (result && !result.error) {
                 showReceipt(newMember);
                 const waText = `🌟 *SHINE STAR NEW REGISTRATION* 🌟\n\n` +
+            `📦 *Product:* ${currentRegProduct}\n` +
             `🆔 *Member ID:* ${myId}\n` +
             `👤 *Name:* ${name}\n` +
                     `📞 *Phone:* ${phone}\n` +
@@ -1782,25 +1823,41 @@ async function renderAllUIs() {
     document.getElementById('activeCount').innerText = approved.length;
     document.getElementById('eligibleCount').innerText = "Approved Members: " + approved.length;
     
-    const approvedCount = approved.length;
-    const groupSize = 130;
-    const numGroups = Math.max(1, Math.ceil((approvedCount + 1) / groupSize));
+    const userAuth = JSON.parse(localStorage.getItem('shine_user') || '{}');
+    const myProducts = approved.filter(m => m.email === userAuth.email).map(m => m.product_type);
     let occupancyHtml = "";
-
-    for (let i = 0; i < numGroups; i++) {
-        const start = i * groupSize;
-        const currentInGroup = Math.min(groupSize, Math.max(0, approvedCount - start));
-        const percent = (currentInGroup / groupSize) * 100;
-        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Group ${i + 1} Occupancy</span><span>${currentInGroup}/${groupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${percent}%"></div></div></div>`;
-    } document.getElementById('occupancyContainer').innerHTML = occupancyHtml;
+    
+    if (myProducts.includes('Solar')) {
+        const solarCount = approved.filter(m => m.product_type === 'Solar').length;
+        const sGroupSize = 200;
+        const sPercent = (solarCount % sGroupSize || sGroupSize) / sGroupSize * 100;
+        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Solar Group Occupancy</span><span>${solarCount % sGroupSize || sGroupSize}/${sGroupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${sPercent}%"></div></div></div>`;
+    }
+    if (myProducts.includes('Mobile')) {
+        const mobileCount = approved.filter(m => m.product_type === 'Mobile').length;
+        const mGroupSize = 130;
+        const mPercent = (mobileCount % mGroupSize || mGroupSize) / mGroupSize * 100;
+        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Mobile Group Occupancy</span><span>${mobileCount % mGroupSize || mGroupSize}/${mGroupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${mPercent}%"></div></div></div>`;
+    }
+    document.getElementById('occupancyContainer').innerHTML = occupancyHtml || `<p style="text-align:center; font-size:0.7rem; opacity:0.5;">Join a group to see occupancy</p>`;
 
     if(document.getElementById('cnt-pending')) document.getElementById('cnt-pending').innerText = pending.length;
     if(document.getElementById('cnt-approved')) document.getElementById('cnt-approved').innerText = approved.length;
     if(document.getElementById('cnt-inst')) document.getElementById('cnt-inst').innerText = instReqs.length;
     if(document.getElementById('cnt-approved-inst')) document.getElementById('cnt-approved-inst').innerText = approvedInst.length;
     if(document.getElementById('total-inst-cash')) document.getElementById('total-inst-cash').innerText = 'Rs ' + totalInstCash.toLocaleString();
-    if(document.getElementById('cnt-pending-profit')) document.getElementById('cnt-pending-profit').innerText = pendingProfits.length;
-    if(document.getElementById('cnt-approved-profit')) document.getElementById('cnt-approved-profit').innerText = approvedProfits.length;
+   const solarPending = globalData.members.filter(m => m.status === 'pending' && m.product_type === 'Solar');
+    const solarApproved = globalData.members.filter(m => m.status === 'approved' && m.product_type === 'Solar');
+    const solarInstReq = globalData.installments.filter(i => i.status === 'pending' && globalData.members.find(m => String(m.id) === String(i.member_id) && m.product_type === 'Solar'));
+    const solarInstApp = globalData.installments.filter(i => i.status === 'approved' && globalData.members.find(m => String(m.id) === String(i.member_id) && m.product_type === 'Solar'));
+
+    if(document.getElementById('cnt-pending-solar')) document.getElementById('cnt-pending-solar').innerText = solarPending.length;
+    if(document.getElementById('cnt-approved-solar')) document.getElementById('cnt-approved-solar').innerText = solarApproved.length;
+    if(document.getElementById('cnt-inst-solar')) document.getElementById('cnt-inst-solar').innerText = solarInstReq.length;
+    if(document.getElementById('cnt-approved-inst-solar')) document.getElementById('cnt-approved-inst-solar').innerText = solarInstApp.length; if(document.getElementById('cnt-pending-profit')) document.getElementById('cnt-pending-profit').innerText = pendingProfits.length;
+ if(document.getElementById('cnt-pending-profit-solar')) document.getElementById('cnt-pending-profit-solar').style.display = 'none';
+    if(document.getElementById('cnt-approved-profit-solar')) document.getElementById('cnt-approved-profit-solar').style.display = 'none'; if(document.getElementById('cnt-pending-profit-solar')) document.getElementById('cnt-pending-profit-solar').style.display = 'none';
+    if(document.getElementById('cnt-approved-profit-solar')) document.getElementById('cnt-approved-profit-solar').style.display = 'none';  if(document.getElementById('cnt-approved-profit')) document.getElementById('cnt-approved-profit').innerText = approvedProfits.length;
 const kycReqs = globalData.members.filter(m => m.kyc_status === 'pending');
     if(document.getElementById('cnt-kyc')) document.getElementById('cnt-kyc').innerText = kycReqs.length;
     const photoData = globalData.config.find(c => c.key === 'home_photo');
@@ -2016,14 +2073,46 @@ async function uploadNotePhoto(input) {
         document.querySelectorAll('.admin-btn').forEach(b => b.classList.remove('active'));
         if(btn) btn.classList.add('active');
         const listCont = document.getElementById('adminDataList');
-        listCont.innerHTML = "<p style='text-align:center; padding:20px;'>Loading...</p>";
-        let data = globalData.members;
-        if(type === 'pending' || type === 'approved') {
-            const res = await supabaseRequest(`shine_members?status=eq.${type}&select=*`);
-            if(!res.error) data = res;
+        listCont.innerHTML = "<p style='text-align:center; padding:20px;'><i class='fas fa-spinner fa-spin'></i> Loading...</p>";
+        if (!globalData.members || globalData.members.length === 0) {
+            listCont.innerHTML = "<p style='text-align:center; color:#ff5050; padding:20px;'>Error: No data found.</p>";
+            return;
         }
+        let data = globalData.members;
         let html = "";
         let list = [];
+        try {
+       if(type === 'pending' || type === 'approved') {
+            list = globalData.members.filter(m => m.status === type && (m.product_type === 'Mobile' || !m.product_type) && (m.kyc_status || '') !== 'pending');
+        } else if(type === 'pending_solar' || type === 'approved_solar') {
+            const statusVal = type.includes('pending') ? 'pending' : 'approved';
+            list = globalData.members.filter(m => m.status === statusVal && m.product_type === 'Solar' && (m.kyc_status || '') !== 'pending');
+        } else if(type === 'pending_inst_solar' || type === 'approved_inst_solar') {
+            const statusVal = type.includes('pending') ? 'pending' : 'approved';
+            const res = await supabaseRequest(`shine_installments?status=eq.${statusVal}&select=*,shine_members!inner(name,product_type)`);
+           if(res && res.error) {
+                listCont.innerHTML = `<p style='text-align:center; color:#ff5050; padding:20px;'>Database Error: ${res.message || 'Unknown Connection Issue'}</p>`;
+                return;
+            }
+            if(!res.error) {
+                list = res.filter(r => r.shine_members.product_type === 'Solar');
+                let instHtml = "";
+                list.forEach(r => {
+                    instHtml += `<div class="admin-list-item" style="flex-direction:column; align-items:flex-start;">
+                        <strong>${r.shine_members.name} (ID: ${r.member_id}) [Solar]</strong>
+                        <p>Month: ${r.month_number} | Amount: Rs ${r.amount}</p>
+                        <img src="${r.proof_img}" style="width:100%; border-radius:10px; margin:10px 0;" onclick="window.open(this.src)">
+                        ${statusVal === 'pending' ? `
+                        <div class="admin-actions">
+                            <button class="btn-approve" onclick="approveInstallment('${r.id}', '${type}')">Approve</button>
+                            <button class="btn-reject" onclick="adminAction('${r.id}', 'del_inst', null, '${type}')">Delete</button>
+                        </div>` : `<span style="color:#28a745; font-weight:bold;">VERIFIED ✔️</span>`}
+                    </div>`;
+                });
+                document.getElementById('adminDataList').innerHTML = instHtml || `<p style='text-align:center;'>No ${statusVal} Solar installments</p>`;
+                return;
+            }
+        }
         if(type === 'pending') list = data.filter(m => m.status === 'pending' && m.kyc_status !== 'pending');
         else if(type === 'approved') list = data.filter(m => m.status === 'approved' && m.kyc_status === 'approved');
         else if(type === 'members') {
@@ -2078,26 +2167,31 @@ async function uploadNotePhoto(input) {
             document.getElementById('adminDataList').innerHTML = appHtml || "<p style='text-align:center;'>No approved profits yet</p>";
             return;
         }
-        else if(type === 'installment_req' || type === 'approved_inst') {
-            const statusFilter = type === 'installment_req' ? 'pending' : 'approved';
-            const reqs = await supabaseRequest(`shine_installments?status=eq.${statusFilter}&select=*,shine_members(name)`);
+        else if(type === 'installment_req' || type === 'approved_inst' || type === 'pending_inst_solar' || type === 'approved_inst_solar') {
+            const statusFilter = (type.includes('pending') || type.includes('req')) ? 'pending' : 'approved';
+            const prodFilter = type.includes('solar') ? 'Solar' : 'Mobile';
+            const reqs = await supabaseRequest(`shine_installments?status=eq.${statusFilter}&select=*,shine_members!inner(name,product_type)`);
             let instHtml = "";
+            if (reqs && reqs.error) {
+                listCont.innerHTML = `<p style='text-align:center; color:#ff5050; padding:20px;'>Database Error: ${reqs.message}</p>`;
+                return;
+            }
             if (reqs && !reqs.error) {
-                reqs.forEach(r => {
-                    const mName = r.shine_members ? r.shine_members.name : 'Member';
+                const filteredReqs = reqs.filter(r => r.shine_members.product_type === prodFilter);
+                filteredReqs.forEach(r => {
                     instHtml += `<div class="admin-list-item" style="flex-direction:column; align-items:flex-start;">
-                        <strong>${mName} (ID: ${r.member_id})</strong>
+                        <strong>${r.shine_members.name} (ID: ${r.member_id}) [${prodFilter}]</strong>
                         <p>Month: ${r.month_number} | Amount: Rs ${r.amount}</p>
                         <img src="${r.proof_img}" style="width:100%; border-radius:10px; margin:10px 0;" onclick="window.open(this.src)">
-                        ${type === 'installment_req' ? `
+                        ${statusFilter === 'pending' ? `
                         <div class="admin-actions">
-                            <button class="btn-approve" onclick="approveInstallment('${r.id}')">Approve</button>
-                            <button class="btn-reject" onclick="adminAction('${r.id}', 'del_inst')">Delete</button>
+                            <button class="btn-approve" onclick="approveInstallment('${r.id}', '${type}')">Approve</button>
+                            <button class="btn-reject" onclick="adminAction('${r.id}', 'del_inst', null, '${type}')">Delete</button>
                         </div>` : `<span style="color:#28a745; font-weight:bold;">VERIFIED ✔️</span>`}
                     </div>`;
                 });
             }
-            document.getElementById('adminDataList').innerHTML = instHtml || `<p style='text-align:center;'>No ${statusFilter} installments</p>`;
+            document.getElementById('adminDataList').innerHTML = instHtml || `<p style='text-align:center;'>No ${statusFilter} ${prodFilter} installments</p>`;
             return;
         }
         else if(type === 'pending_payment') {
@@ -2154,7 +2248,10 @@ async function uploadNotePhoto(input) {
                 </div>
             </div>`;
         }); 
-        document.getElementById('adminDataList').innerHTML = html || "<p style='text-align:center; opacity:0.5; font-size:0.8rem;'>No records found</p>";
+        document.getElementById('adminDataList').innerHTML = html || "<p style='text-align:center; opacity:0.5; font-size:0.8rem;'>No records found.</p>";
+        } catch (err) {
+            listCont.innerHTML = `<p style='color:#ff5050; padding:20px;'>Error: ${err.message}</p>`;
+        }
     }
 async function addDailyPay(memberId) {
     const amtInput = document.getElementById(`dailyAmt_${memberId}`);
@@ -2166,16 +2263,18 @@ async function addDailyPay(memberId) {
     if(res && !res.error) {
         const allDaily = await supabaseRequest(`shine_daily_payments?member_id=eq.${rawId}&select=amount`);
         const total = allDaily.reduce((s, p) => s + p.amount, 0);
+        const member = globalData.members.find(m => String(m.id) === String(rawId));
+        const instAmount = member && member.product_type === 'Solar' ? 6000 : 5000;
         const currentInstRes = await supabaseRequest(`shine_installments?member_id=eq.${rawId}&status=eq.approved&select=month_number`);
         const alreadyPaidMonths = currentInstRes.map(i => i.month_number);
-        const totalPaidInstallments = Math.floor(total / 5000);
+        const totalPaidInstallments = Math.floor(total / instAmount);
         
         for (let m = 1; m <= totalPaidInstallments; m++) {
             if (!alreadyPaidMonths.includes(m)) {
                 await supabaseRequest('shine_installments', 'POST', {
                     member_id: rawId,
                     month_number: m,
-                    amount: 5000,
+                    amount: instAmount,
                     status: 'approved',
                     timestamp: Date.now()
                 });
@@ -2188,10 +2287,10 @@ async function addDailyPay(memberId) {
         alert("Database Error: " + res.message);
     }
 }
-async function approveInstallment(id) {
+async function approveInstallment(id, currentType) {
     const res = await supabaseRequest(`shine_installments?id=eq.${id}`, 'PATCH', { status: 'approved' });
     if(res && !res.error) {
-        renderAdmin('installment_req');
+        renderAdmin(currentType);
         fetchAllData();
     }
 }
@@ -2215,10 +2314,13 @@ async function adminAction(id, action, btn) {
         else if (action === 'delete') { method = 'DELETE'; body = null; }
         const res = await supabaseRequest(`shine_members?id=eq.${id}`, method, body);
         if (res && !res.error) {
+            await fetchAllData();
+            const activeBtn = document.querySelector('.admin-btn.active');
+            if (activeBtn) {
+                activeBtn.click();
+            }
             if (action === 'delete') alert("Deleted Successfully");
             else alert("Action Successful");
-            fetchAllData();
-            renderAdmin('pending');
         } else {
             alert("Error: " + (res.message || "Failed"));
             if (btn) { btn.innerText = oldText; btn.disabled = false; }
@@ -2307,21 +2409,29 @@ async function adminAction(id, action, btn) {
         if(countdownDisplay) countdownDisplay.innerText = timerStr;
         if(btn) btn.style.display = (now.getDate() === 10 && now.getHours() >= 20) ? 'block' : 'none';
         
-        const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
-        if(user.id) {
-            const rawId = user.id;
-            const dailyRes = await supabaseRequest(`shine_daily_payments?member_id=eq.${rawId}&select=*`);
-            if(dailyRes && !dailyRes.error) {
-                const total = dailyRes.reduce((s, p) => s + p.amount, 0);
-                const currentMonthTotal = total % 5000;
-                document.getElementById('dailyPayText').innerText = `Rs ${currentMonthTotal} / 5,000`;
-                document.getElementById('dailyProgressBar').style.width = (currentMonthTotal / 5000 * 100) + '%';
-                let historyHtml = "";
-                dailyRes.reverse().forEach(p => {
-                    historyHtml += `<div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(40,167,69,0.1); padding:4px 0;"><span>${new Date(p.timestamp).toLocaleDateString()} ${new Date(p.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span><span>Rs ${p.amount}</span></div>`;
-                });
-                document.getElementById('recentDailyPayments').innerHTML = historyHtml;
+        const userAuth = JSON.parse(localStorage.getItem('shine_user') || '{}');
+        const myEntries = globalData.members.filter(m => m.email === userAuth.email && m.status === 'approved');
+        if(myEntries.length > 0) {
+            let historyHtml = "";
+            let progressHtml = "";
+            for (const entry of myEntries) {
+                const dailyRes = await supabaseRequest(`shine_daily_payments?member_id=eq.${entry.id}&select=*`);
+                if(dailyRes && !dailyRes.error) {
+                    const total = dailyRes.reduce((s, p) => s + p.amount, 0);
+                    const target = entry.product_type === 'Solar' ? 6000 : 5000;
+                    const currentMonthTotal = total % target;
+                    const percent = (currentMonthTotal / target * 100);
+                    progressHtml += `
+                        <div class="progress-text"><span>${entry.product_type} Pay Due Progress</span><span>Rs ${currentMonthTotal} / ${target}</span></div>
+                        <div class="progress-container"><div class="progress-bar" style="width: ${percent}%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div></div>`;
+                    dailyRes.reverse().forEach(p => {
+                        historyHtml += `<div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(40,167,69,0.1); padding:4px 0;"><span>[${entry.product_type}] ${new Date(p.timestamp).toLocaleDateString()}</span><span>Rs ${p.amount}</span></div>`;
+                    });
+                }
             }
+            const progCont = document.getElementById('dailyProgressBar').parentElement.parentElement;
+            progCont.innerHTML = progressHtml;
+            document.getElementById('recentDailyPayments').innerHTML = historyHtml;
         }
     }
 
@@ -2473,10 +2583,13 @@ function shareReferral() {
     }
 }
 let selectedMonth = 0;
-    function openPayModal(month) {
+    let currentPayId = "";
+    function openPayModal(month, memberId, productType) {
         selectedMonth = month;
-        const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
-        document.getElementById('modalMonthText').innerText = "Paying for Month " + month;
+        currentPayId = memberId;
+        const user = globalData.members.find(m => String(m.id) === String(memberId));
+        const amount = productType === 'Solar' ? 6000 : 5000;
+        document.getElementById('modalMonthText').innerText = `${productType} - Month ${month} (Rs ${amount})`;
         document.getElementById('instName').value = user.name || '';
         document.getElementById('instPhone').value = user.phone || '';
         document.getElementById('instAddress').value = user.address || '';
@@ -2495,12 +2608,13 @@ let selectedMonth = 0;
         const reader = new FileReader();
         reader.onload = async (e) => {
             const base64 = e.target.result;
+            const user = globalData.members.find(m => String(m.id) === String(currentPayId));
             const payload = {
-                member_id: String(user.id).replace('SS-', ''),
+                member_id: String(currentPayId).replace('SS-', ''),
                 month_number: parseInt(selectedMonth),
                 proof_img: base64,
                 method: document.getElementById('instMethod').value,
-                amount: 5000,
+                amount: user.product_type === 'Solar' ? 6000 : 5000,
                 status: 'pending',
                 timestamp: Date.now()
             };
@@ -2519,36 +2633,64 @@ let selectedMonth = 0;
         reader.readAsDataURL(fileInput.files[0]);
     }
 async function renderInstallmentCard() {
-        const userAuth = JSON.parse(localStorage.getItem('shine_user') || '{}');
-        const userData = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
-        const user = userData.id ? userData : (globalData.members.find(m => m.email === userAuth.email) || userAuth);
-        const container = document.getElementById('installmentContent');
-        if(!user || !user.id) return;
+    const userAuth = JSON.parse(localStorage.getItem('shine_user') || '{}');
+    const userData = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    const userEmail = userAuth.email || userData.email;
+    
+    const userProducts = globalData.members.filter(m => 
+        (m.email === userEmail || (m.id && userData.id && String(m.id) === String(userData.id))) && 
+        m.status === 'approved'
+    );
 
+    const container = document.getElementById('installmentContent');
+    if (!userProducts || userProducts.length === 0) {
+        container.innerHTML = `<div class="glass" style="text-align:center; padding:20px;">
+            <i class="fas fa-exclamation-circle" style="font-size:2rem; color:#ffcc00; margin-bottom:10px;"></i>
+            <p style="opacity:0.8;">No active approved plans found.<br><small>Admin approval is required to see your card.</small></p>
+        </div>`;
+        return;
+    }
+    let fullHtml = "";
+    userProducts.forEach(user => {
         const paidMonths = globalData.installments
             .filter(ins => String(ins.member_id) === String(user.id) && ins.status === 'approved')
             .map(ins => parseInt(ins.month_number));
-        if(user.status === 'approved' && !paidMonths.includes(1)) paidMonths.push(1);
-
-        let html = `<div class="glass" style="border: 1px solid rgba(0, 210, 255, 0.3); background: linear-gradient(180deg, rgba(0, 51, 102, 0.4), rgba(0, 11, 24, 0.8));">
+        if (!paidMonths.includes(1)) paidMonths.push(1);
+        const maxMonths = user.product_type === 'Solar' ? 30 : 15;
+        let html = `<div class="glass" style="border: 1px solid rgba(0, 210, 255, 0.3); background: linear-gradient(180deg, rgba(0, 51, 102, 0.4), rgba(0, 11, 24, 0.8)); margin-bottom:20px;">
             <div style="text-align:center; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:15px;">
+                <h4 style="color:#00d2ff; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px;">${user.product_type} PLAN</h4>
                 <h2 style="color:#ffcc00; font-size:1.4rem; text-transform:uppercase;">${user.name}</h2>
                 <p style="color:#00d2ff; font-weight:bold; font-size:0.9rem;">ID: ${user.id}</p>
             </div>
             <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">`;
-        
-        for(let i=1; i<=15; i++) {
+        for (let i = 1; i <= maxMonths; i++) {
             const isPaid = paidMonths.includes(i);
             html += `<div style="background:${isPaid ? 'rgba(40, 167, 69, 0.15)' : 'rgba(255,255,255,0.03)'}; border:1px solid ${isPaid ? '#28a745' : 'rgba(255,255,255,0.1)'}; padding:12px 5px; border-radius:15px; text-align:center;">
                 <span style="font-size:0.5rem; opacity:0.5; display:block;">MONTH ${i}</span>
-                <h4 style="margin:5px 0; font-size:0.8rem; color:${isPaid ? '#28a745' : '#fff'}">${isPaid ? 'PAID ✔️' : 'DUE'}</h4>
-                <div style="font-size:1.1rem; margin-bottom:5px;">${isPaid ? '<i class="fas fa-check-circle" style="color:#28a745;"></i>' : '<i class="fas fa-circle-notch" style="opacity:0.2;"></i>'}</div>
-                ${!isPaid ? `<button onclick="openPayModal(${i})" style="background:#00d2ff; border:none; color:#000; font-size:0.6rem; padding:4px 8px; border-radius:5px; font-weight:bold;">Pay Now</button>` : ''}
+                <h4 style="margin:5px 0; font-size:0.8rem; color:${isPaid ? '#28a745' : '#ffcc00'}">${isPaid ? 'PAID ✔️' : 'DUE'}</h4>
+                <div style="font-size:1.1rem; margin-bottom:5px;">${isPaid ? '<i class="fas fa-check-circle" style="color:#28a745;"></i>' : '<i class="fas fa-clock" style="color:#ffcc00; opacity:0.5;"></i>'}</div>
+                ${!isPaid ? `<button onclick="openPayModal(${i}, '${user.id}', '${user.product_type}')" style="background:#00d2ff; border:none; color:#000; font-size:0.65rem; padding:5px 10px; border-radius:8px; font-weight:bold; box-shadow:0 2px 5px rgba(0,210,255,0.3);">Pay Now</button>` : ''}
             </div>`;
-        } 
+        }
         html += `</div></div>`;
-        container.innerHTML = html;
+        fullHtml += html;
+    });
+    container.innerHTML = fullHtml;
+}
+    let currentRegProduct = 'Mobile';
+    let currentRegAmount = 5000;
+
+    function openRegistration(product, amount) {
+        currentRegProduct = product;
+        currentRegAmount = amount;
+        nav(null, 'form');
+        document.getElementById('productType').value = product;
+        document.getElementById('userPayment').value = amount;
+        document.getElementById('formStep1').style.display = 'block';
+        document.getElementById('formStep2').style.display = 'none';
     }
+
     window.onload = () => {
         const urlParams = new URLSearchParams(window.location.search);
         const ref = urlParams.get('ref');
