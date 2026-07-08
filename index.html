@@ -328,11 +328,13 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
 .progress-container { margin: 20px 0; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 5px; border: 1px solid rgba(0,210,255,0.3); }
     .progress-bar { height: 12px; background: linear-gradient(90deg, #00d2ff, #3a7bd5); border-radius: 8px; width: 0%; transition: width 1s ease-in-out; position: relative; }
     .progress-text { display: flex; justify-content: space-between; font-size: 0.7rem; margin-top: 5px; color: #ffcc00; font-weight: 600; }
-    .floating-chat { position: fixed; bottom: 85px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 999; animation: bounce 2s infinite; text-decoration: none; }
+    .floating-chat { position: fixed; bottom: 85px; right: 20px; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 0 30px rgba(255, 204, 0, 0.4); transition: 0.3s; }
     @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 .proof-gallery { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
     .proof-gallery::-webkit-scrollbar { display: none; }
     .proof-card { flex: 0 0 150px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 15px; overflow: hidden; border: 1px solid rgba(0,210,255,0.2); scroll-snap-align: start; }
+@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .proof-card img { width: 100%; height: 100%; object-fit: cover; }
     .btn-download { background: #003366; color: white; border: none; padding: 10px; border-radius: 10px; width: 100%; margin-top: 10px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
 @media print { 
@@ -406,9 +408,9 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                 <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'userProfile'); toggleSidebar()">
                     <i class="fas fa-user-circle"></i> <span>Profile</span>
                 </button>
-  <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'mobileApply'); toggleSidebar()">
-                    <i class="fas fa-id-card"></i> <span>Mobile KYC</span>
-                </button>         
+     <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'mobileApply'); toggleSidebar()">
+                    <i class="fas fa-id-card"></i> <span>Solar KYC</span>
+                </button>      
                 <button class="admin-btn" style="width: 100%; text-align: left; padding: 15px; display: flex; align-items: center; gap: 15px;" onclick="nav(null, 'team'); toggleSidebar()">
                     <i class="fas fa-crown"></i> <span>Founder</span>
                 </button>
@@ -429,7 +431,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         </div>
         <div class="glass hero-card">
             
-            <h2 style="font-size: 1.3rem;">MHENGA SOLAR SYSTEM OR MOBILE LENA HOWA ASAAN</h2>
+            <h2 style="font-size: 1.3rem;">MHENGA SOLAR SYSTEM LENA HOWA ASAAN</h2>
             <div id="notePhotoBox" style="display:none; margin: 20px 0;">
                 <div class="glass" style="padding:0; overflow:hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
                     <img id="notePhotoImg" src="" style="width:100%; height:auto; display:block;">
@@ -476,49 +478,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             <button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; width: 100%;" onclick="nav(null, 'winnerListPage')">
                 <i class="fas fa-trophy"></i> Winner List
             </button>
-            <div style="margin: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                
-                <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 20px; margin-bottom: 20px;">
-                    <h3 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">Mobile Specifications</h3>
-                    <div style="display: flex; flex-direction: column; gap: 15px; text-align: center;">
-                        <div>
-                            <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">PREMIUM SMARTPHONES</h5>
-                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Aap Rs. 60,000 ki maliyat ka koi bhi behtareen mobile phone hasil kar sakte hain.</p>
-                        </div>
-                        <div>
-                            <h5 style="color: #00d2ff; font-size: 0.9rem; font-weight: 700;">TOP BRANDS (OPPO & VIVO)</h5>
-                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Oppo aur Vivo jese brands apne shandaar camera aur fast performance ki wajah se poori dunya mein mashhoor hain, jo aap hamare system se asani se hasil kar sakte hain.</p>
-                        </div>
-                        <div>
-                            <h5 style="color: #ffcc00; font-size: 0.9rem; font-weight: 700;">YOUR CHOICE, OUR PRIORITY</h5>
-                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Market se apni pasand ka koi bhi model select karen jo 60,000 ki range mein ho, Shine Star aapko wahi mobile provide kare ga.</p>
-                        </div>
-                        <div style="border-top: 1px dashed rgba(255,255,255,0.1); pt-10;">
-                            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 700;">CASH-OUT POLICY (OUT OF CITY)</h5>
-                            <p style="font-size: 0.8rem; opacity: 0.9; line-height: 1.5;">Agar aap out-of-city hain ya mobile ki bajaye cash lena chahte hain, toh aapko cash payment ka option diya jaye ga. Humara system 100% transparency aur sachai par mabni hai.</p>
-                        </div>
-                    </div>
-                </div>
-                <p style="font-size: 0.85rem; opacity: 0.9;">60,000 Wala mobile sirf 5,000 ki qist mein hasil karen.</p>
-                <div class="price-box">
-                    <div class="price-item">
-                        <span>Monthly</span>
-                        <strong>5,000</strong>
-                    </div>
-                    <div class="price-item">
-                        <span>Duration</span>
-                        <strong>15 Months</strong>
-                    </div>
-                    <div class="price-item">
-                        <span>Total</span>
-                        <strong>75,000</strong>
-                    </div>
-                </div>
-                <button class="btn-main" onclick="openRegistration('Mobile', 5000)">JOIN GROUP NOW</button>
-                <button class="btn-main" style="background: rgba(0, 210, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 210, 255, 0.4); color: #00d2ff; margin-top: 15px; margin-bottom: 20px; width: 100%;" onclick="nav(null, 'winnerListPage')">
-                    <i class="fas fa-trophy"></i> Winner List
-                </button>
-            </div>
+            
         </div>
 <div class="glass" style="margin-bottom: 20px; padding: 15px;">
     <div style="text-align:center; margin-bottom:15px;">
@@ -540,8 +500,11 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         <div class="progress-container">
             <div class="progress-bar" id="dailyProgressBar" style="width: 0%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div>
         </div>
-        <div id="recentDailyPayments" style="margin-top:10px; font-size:0.7rem; max-height:100px; overflow-y:auto; padding-right:5px; color:#28a745; font-weight:600;"></div>
+        <div id="recentDailyPayments" style="margin-top:15px; max-height:220px; overflow-y:auto; padding-right:5px; scrollbar-width: none; -ms-overflow-style: none;"></div>
     </div>
+<button class="btn-main" onclick="nav(null, 'tradePage')" style="background: linear-gradient(45deg, #ffcc00, #00d2ff); color: #000; margin-top: 10px; font-weight: 800; border: none; box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);">
+        <i class="fas fa-chart-line"></i> SHINE TRADING
+    </button>
 </div> 
      <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
             <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-briefcase"></i></div>
@@ -577,24 +540,6 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Jitni aapki mehnat, utna aapka munafa. Shine Star ke sath apna mustaqbil sanwaren."</p>
         </div>
 
-<div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center;">
-            <div style="display: flex; flex-direction: column; gap: 40px;">
-                <div>
-                    <h4 style="color: #ffcc00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;"><i class="fas fa-motorcycle"></i> CD-70 BIKE OFFER</h4>
-                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Shine Star apne members ke liye laya hai behtareen inaam. Group ke <strong>First Lucky Winner</strong> aur sab se <strong>Last Member</strong> ko Shine Star ki taraf se bilkul <strong>Free CD-70 Motorcycle</strong> tohfay mein di jaye gi.</p>
-                </div>
-
-                <div>
-                    <h4 style="color: #00d2ff; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">3 MONTH FAST POLICY</h4>
-                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">System ko tez banane ke liye 3 maah ke baad har mahine 1 Lucky Draw winner ke sath mazeed <strong>3 members ko advance mobile</strong> diya jaye ga, taake 15 mahine ke mukammal hone tak har member ko apna mobile mil sakay.</p>
-                </div>
-
-                <div>
-                    <h4 style="color: #ff5050; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTE</h4>
-                    <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.7; color: #e0e0e0;">Lucky draw mein shamil hone ke liye qist ki waqt par adayegi lazmi hai. Agar koi member lagatar <strong>3 maah qist</strong> jama nahi karwaye ga, to uska naam group se nikal diya jaye ga aur jama shuda raqam wapis nahi hogi.</p>
-                </div>
-            </div>
-        </div>
 <div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden; margin-top: 20px;">
     <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-solar-panel"></i></div>
     <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
@@ -613,49 +558,24 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         </div>
 
         <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-money-bill-wave"></i> EXTRA CASH INAAMAT</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Agar aapka luck draw mein late aata hai, toh Shine Star aapko cash inaam deta hai: 26th No par 20,000, 27th No par 25,000, 28th No par 30,000 aur 29th No par 40,000 Cash inaam diya jaye ga.</p>
+            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-battery-full"></i> BATTERY LUCKY DRAW</h5>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Agar aapka luck Solar Draw mein kaam nahi karta, toh 30 Winners ke baad baqi <strong>170 Members</strong> ke liye aik makhsoos Lucky Draw conduct kiya jaye ga. Is mein <strong>10 Khush-Naseeb</strong> members ko <strong>Rs. 30,000</strong> maliyat ki Battery tohfay mein di jaye gi taake last members bhi faida utha saken.</p>
         </div>
 
-        <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 204, 0, 0.3);">
-            <h5 style="color: #ffcc00; font-size: 1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-gift"></i> LAST MEMBER OFFER</h5>
-            <p style="font-size: 0.85rem; color: #fff; font-weight: 700;">SOLAR SYSTEM + 50,000 CASH INAAM</p>
+        <div style="background: rgba(0, 210, 255, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(0, 210, 255, 0.3);">
+            <h5 style="color: #00d2ff; font-size: 1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-bolt"></i> ADVANCED SOLAR OFFER</h5>
+            <p style="font-size: 0.85rem; color: #fff; line-height: 1.5;">System ko mazeed tez banane ke liye <strong>2 Maah baad</strong> har Lucky Draw ke sath <strong>5 Trusted Members</strong> ko Advanced Solar System provide kiya jaye ga. Yeh offer sirf un members ke liye hai jo waqt par qist jama karwatay hain.</p>
+        </div>
+
+        <div style="background: rgba(255, 80, 80, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 80, 80, 0.3); margin-top: 10px;">
+            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTE</h5>
+            <p style="font-size: 0.8rem; color: #fff; line-height: 1.5; text-align: left;">
+                • Qist har mahine Lucky Draw se pehle jama karwana lazmi hai.<br>
+                • Jis member ki qist nahi ayegi, uska naam Draw mein shamil nahi kiya jaye ga.<br>
+                • Lagatar <strong>3 Maah</strong> qist na dene par aapka naam system se khatam kar diya jaye ga aur jama shuda raqam <strong>Non-Refundable</strong> hogi.
+            </p>
         </div>
     </div>
-</div>
-<div class="glass" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -10px; right: -10px; font-size: 4rem; color: rgba(255, 255, 255, 0.02); transform: rotate(15deg);"><i class="fas fa-shield-alt"></i></div>
-    <h4 style="color: #ffcc00; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; width: 100%;">
-        MOBILE SYSTEM POLICY
-    </h4>
-    
-    <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-users"></i> EXCLUSIVE GROUP</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Shine Star system mein <strong>130 Members</strong> ka ek exclusive group banaya jata hai taake management aur transparency barkarar rahay.</p>
-        </div>
-
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-dice"></i> TRANSPARENT DRAW</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Har mahine transparent <strong>Lucky Draw</strong> conduct kiya jata hai. Jis member ka naam nikalta hai, uski tamam <strong>Baqi Qist (Remaining Installments)</strong> 100% maaf kar di jati hain.</p>
-        </div>
-
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-gift"></i> GUARANTEED DELIVERY</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Lucky Draw ke ilawa baqi tamam members ko bhi mobile lazmi diya jaye ga. <strong>3 Maah baad Advance Mobile</strong> milna start ho jayen ge aur 15 mahine ke andar group ke tamam members apna mobile hasil kar chukay hon ge.</p>
-        </div>
-
-        <div>
-            <h5 style="color: #00d2ff; font-size: 1rem; margin-bottom: 5px; font-weight: 800;"><i class="fas fa-globe-pk"></i> DECENTRALIZED SYSTEM</h5>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0;">Aap Pakistan ke kisi bhi konay se join kar sakte hain. Out-of-city members ke liye <strong>Cash Payment</strong> ka option mojood hai taake Courier (TCC) mein mobile damage hone ka khatra na rahay.</p>
-        </div>
-
-        <div style="background: rgba(255, 80, 80, 0.1); padding: 15px; border-radius: 15px; border: 1px solid rgba(255, 80, 80, 0.3);">
-            <h5 style="color: #ff5050; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;"><i class="fas fa-exclamation-circle"></i> IMPORTANT NOTICE</h5>
-            <p style="font-size: 0.8rem; color: #fff; line-height: 1.5;">Agar member mobile ki jagah cash payment lena chahta hai, toh osy cash bhe diya jaye ga. Retail price aur bulk purchasing price mein difference ki wajah se yeh policy 100% transparent rakhi gayi hai.</p>
-        </div>
-    </div>
-    <p style="font-size: 0.7rem; text-align: center; margin-top: 15px; color: #ffcc00; font-weight: 600; font-style: italic;">"Digital Decentralized System - Transparency is our Priority"</p>
 </div>
     </div>
 <div id="team" class="page">
@@ -720,8 +640,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
                     <div class="form-group">
                         <label>Send to JazzCash</label>
                         <div class="form-input" style="text-align: center; font-weight: 600; font-size: 0.85rem; line-height: 1.6;">
-                            Muhammad Imran 03005534198<br>
-                            Qasir Zaman 03017428956
+                            Muhammad Imran 03005534198
                         </div>
                     </div>
                     <div class="form-group">
@@ -848,18 +767,18 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             <button onclick="nav(null, 'home'); toggleSidebar()" style="position: absolute; left: 0; background: none; border: none; color: #ffcc00; font-size: 1.5rem; cursor: pointer;">
                 <i class="fas fa-arrow-left"></i>
             </button>
-            <h1 style="margin: 0; font-size: 1.5rem;">MOBILE KYC</h1>
+            <h1 style="margin: 0; font-size: 1.5rem;">SOLAR KYC</h1>
         </div>
         <div class="glass" id="advancedMobileInfo">
-            <h2 style="color: #ffcc00; font-size: 1.2rem; text-align: center; margin-bottom: 15px;">ADVANCED MOBILE POLICY</h2>
+            <h2 style="color: #ffcc00; font-size: 1.2rem; text-align: center; margin-bottom: 15px;">SOLAR SYSTEM KYC POLICY</h2>
             <div style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 20px;">
-                <p style="margin-bottom: 10px;"><i class="fas fa-info-circle" style="color:#00d2ff;"></i> Advanced Mobile program <strong>3 Maah</strong> ke baad shuru hoga.</p>
-                <p style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color:#00d2ff;"></i> Iske liye <strong>KYC Verification</strong> aur Admin approval lazmi hai.</p>
-                <p style="margin-bottom: 10px;"><i class="fas fa-exclamation-triangle" style="color:#ffcc00;"></i> Mobile milne ke baad bhi qist time par dena lazmi hai jab tak aap Draw nahi jeet-te.</p>
-                <p style="margin-bottom: 10px;"><i class="fas fa-gavel" style="color:#ff5050;"></i> 3 Maah qist na dene par <strong>Mobile wapis</strong> le liya jaye ga aur koi refund nahi mile ga.</p>
-                <p style="margin-bottom: 10px;"><i class="fas fa-shield-alt" style="color:#28a745;"></i> Ye ek digital system hai, galat bayani par qanooni karwai ki jaye gi.</p>
+                <p style="margin-bottom: 10px;"><i class="fas fa-solar-panel" style="color:#00d2ff;"></i> Solar System hasil karne ke liye KYC verification mukammal karna lazmi hai.</p>
+                <p style="margin-bottom: 10px;"><i class="fas fa-id-card" style="color:#00d2ff;"></i> Apne Asli CNIC ki photos aur Face scan upload karein taake aapka record verify ho sakay.</p>
+                <p style="margin-bottom: 10px;"><i class="fas fa-check-double" style="color:#28a745;"></i> KYC approved hone ke baad hi aap Lucky Draw aur Advance Solar policy ke liye eligible hon ge.</p>
+                <p style="margin-bottom: 10px;"><i class="fas fa-exclamation-triangle" style="color:#ffcc00;"></i> Galat maloomat dene par aapka account foran block kar diya jaye ga.</p>
+                <p style="margin-bottom: 10px;"><i class="fas fa-shield-alt" style="color:#00d2ff;"></i> Aapka data Shine Star ke pass 100% mehfooz hai.</p>
             </div>
-            <button class="btn-main" onclick="document.getElementById('advancedMobileInfo').style.display='none'; document.getElementById('kycFormContainer').style.display='block';">Apply & Complete KYC</button>
+            <button class="btn-main" onclick="document.getElementById('advancedMobileInfo').style.display='none'; document.getElementById('kycFormContainer').style.display='block';">Start Solar KYC Now</button>
         </div>
 
         <div class="glass" id="kycFormContainer" style="display:none;">
@@ -995,7 +914,184 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         <p>System join karne ke baad koi bhi payment wapis (Refund) nahi ki jaye gi.</p>
     </div>
 </div>
+<div id="miningPage" class="page">
+    <div class="header" style="position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 0;">
+        <button onclick="nav(null, 'home')" style="position: absolute; left: 0; background: none; border: none; color: #ffcc00; font-size: 1.5rem; cursor: pointer;">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h1 style="margin: 0; font-size: 1.5rem;">SOLAR MINING</h1>
+    </div>
+    <div class="glass" style="text-align: center; padding: 40px 20px; background: radial-gradient(circle at center, rgba(0, 210, 255, 0.15), transparent);">
+        <div id="miningStatus" style="color: #00d2ff; font-size: 0.7rem; font-weight: 800; letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase;">SYSTEM READY</div>
+        <div style="position: relative; width: 200px; height: 200px; margin: 0 auto 30px;">
+            <div id="miningCircle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; border: 4px dashed #ffcc00; animation: rotate 10s linear infinite; opacity: 0.3;"></div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: rgba(0, 210, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);">
+                <i id="miningIcon" class="fas fa-solar-panel" style="font-size: 4rem; color: #ffcc00; text-shadow: 0 0 20px #ffcc00;"></i>
+            </div>
+        </div>
+        <div style="margin-bottom: 30px;">
+            <h2 id="miningTimer" style="font-size: 2.5rem; font-weight: 800; color: #fff; font-family: 'Orbitron', sans-serif;">03:00:00</h2>
+            <p style="font-size: 0.8rem; color: #00d2ff; opacity: 0.8;">Next Reward: 3 SHINE Tokens</p>
+        </div>
+        <div class="glass" style="background: rgba(255,255,255,0.05); margin-bottom: 20px; display: flex; justify-content: space-around; padding: 15px;">
+            <div>
+                <span style="display: block; font-size: 0.6rem; opacity: 0.6;">TOTAL MINED</span>
+                <strong id="totalMinedTokens" style="color: #ffcc00; font-size: 1.2rem;">0.00</strong>
+            </div>
+            <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+            <div>
+                <span style="display: block; font-size: 0.6rem; opacity: 0.6;">HASH RATE</span>
+                <strong style="color: #00d2ff; font-size: 1.2rem;">1.0 SH/s</strong>
+            </div>
+        </div>
+        <button id="startMiningBtn" class="btn-main" onclick="startMiningProcess()" style="height: 60px; font-size: 1.1rem; letter-spacing: 1px;">START MINING</button>
+    </div>
+</div>
+<div id="walletPage" class="page">
+    <div class="header" style="position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 0;">
+        <button onclick="nav(null, 'home')" style="position: absolute; left: 0; background: none; border: none; color: #ffcc00; font-size: 1.5rem; cursor: pointer;"><i class="fas fa-arrow-left"></i></button>
+        <h1 style="margin: 0; font-size: 1.5rem;">ASSETS</h1>
+    </div>
+    <div class="glass" style="background: linear-gradient(135deg, #003366, #000b18); border: 1px solid #00d2ff;">
+        <p style="font-size: 0.7rem; opacity: 0.7;">Total Balance (PKR)</p>
+        <h2 id="walletTotalPKR" style="font-size: 2rem; color: #fff;">Rs 0.00</h2>
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <button class="admin-btn" style="flex: 1; background: #28a745; border: none;"><i class="fas fa-arrow-down"></i> Deposit</button>
+            <button class="admin-btn" style="flex: 1; background: #ff5050; border: none;"><i class="fas fa-arrow-up"></i> Withdraw</button>
+        </div>
+    </div>
+    <div class="glass">
+        <h4 style="color: #00d2ff; margin-bottom: 15px;">My Tokens</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 40px; height: 40px; background: #ffcc00; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 800;">S</div>
+                <div><p style="font-weight: 600;">SHINE</p><p style="font-size: 0.6rem; opacity: 0.6;">Shine Star Token</p></div>
+            </div>
+            <div style="text-align: right;"><p id="walletShineBalance" style="font-weight: 700;">0.00</p><p id="walletShineValue" style="font-size: 0.6rem; color: #28a745;">Rs 0.00</p></div>
+        </div>
+    </div>
+</div>
 
+<div id="tradePage" class="page" style="background: #ffffff; color: #000; min-height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 10000; padding-bottom: 100px; overflow-y: auto; font-family: 'Poppins', sans-serif;">
+    <div class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #fff;">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-bars" style="font-size: 1rem; color: #000;"></i>
+                <h2 style="font-size: 1.3rem; font-weight: 700; color: #000;">SHINE/PKR <i class="fas fa-caret-down" style="font-size: 0.7rem; margin-left: 2px;"></i></h2>
+            </div>
+            <span id="livePriceTag" style="color: #2ebd85; font-size: 0.8rem; font-weight: 600;">+1.30%</span>
+        </div>
+        <div style="display: flex; gap: 20px; color: #000; font-size: 1.2rem;">
+            <i class="fas fa-chart-line"></i>
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 15px; padding: 10px 16px;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; background: #f0f1f2; border-radius: 8px; padding: 4px;">
+                <button id="buyTab" onclick="setTradeMode('buy')" style="flex: 1; padding: 8px; border: none; background: #2ebd85; color: #fff; border-radius: 6px; font-size: 0.9rem; font-weight: 600; transition: 0.3s;">Buy</button>
+                <button id="sellTab" onclick="setTradeMode('sell')" style="flex: 1; padding: 8px; border: none; background: transparent; color: #5e6673; font-size: 0.9rem; font-weight: 600; transition: 0.3s;">Sell</button>
+            </div>
+
+            <div style="position: relative;">
+                <select id="orderTypeSelect" onchange="orderType = this.value; document.getElementById('tradePrice').readOnly = (this.value === 'market');" style="width: 100%; background: #f0f1f2; border: none; color: #000; padding: 10px 12px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; appearance: none; outline: none;">
+                    <option value="limit">Limit</option>
+                    <option value="market">Market</option>
+                </select>
+                <i class="fas fa-caret-down" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #5e6673; pointer-events: none;"></i>
+            </div>
+
+            <div style="background: #f0f1f2; border-radius: 6px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: #5e6673; font-size: 0.85rem;">Price</span>
+                <input type="number" id="tradePrice" style="width: 60%; background: transparent; border: none; text-align: right; color: #000; font-size: 0.95rem; font-weight: 700; outline: none;">
+                <span style="color: #000; font-size: 0.85rem; font-weight: 600; margin-left: 5px;">PKR</span>
+            </div>
+
+            <div style="background: #f0f1f2; border-radius: 6px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: #5e6673; font-size: 0.85rem;">Amount</span>
+                <input type="number" id="tradeAmount" oninput="calcTradeTotal()" style="width: 60%; background: transparent; border: none; text-align: right; color: #000; font-size: 0.95rem; font-weight: 700; outline: none;">
+                <span style="color: #000; font-size: 0.85rem; font-weight: 600; margin-left: 5px;">SHINE</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 4px;">
+                <div onclick="setTradePercent(0.25)" class="slider-dot" style="width: 8px; height: 8px; background: #eaecef; border-radius: 50%; cursor: pointer;"></div>
+                <div style="height: 2px; flex: 1; background: #eaecef;"></div>
+                <div onclick="setTradePercent(0.50)" class="slider-dot" style="width: 8px; height: 8px; background: #eaecef; border-radius: 50%; cursor: pointer;"></div>
+                <div style="height: 2px; flex: 1; background: #eaecef;"></div>
+                <div onclick="setTradePercent(0.75)" class="slider-dot" style="width: 8px; height: 8px; background: #eaecef; border-radius: 50%; cursor: pointer;"></div>
+                <div style="height: 2px; flex: 1; background: #eaecef;"></div>
+                <div onclick="setTradePercent(1.00)" class="slider-dot" style="width: 8px; height: 8px; background: #eaecef; border-radius: 50%; cursor: pointer;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #5e6673; margin-top: 5px;">
+                <span>Available</span>
+                <span id="tradeAvailable" style="color: #000; font-weight: 600;">0.00 PKR</span>
+            </div>
+
+            <button id="tradeExecBtn" onclick="executeTrade()" style="width: 100%; background: #2ebd85; color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(46, 189, 133, 0.2); transition: 0.3s;">Buy SHINE</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; color: #5e6673; font-size: 0.75rem; margin-bottom: 8px;">
+                <span>Price (PKR)</span>
+                <span>Amount</span>
+            </div>
+            <div id="orderBookSell" style="color: #f6465d; font-size: 0.85rem; font-weight: 600; line-height: 1.8; text-align: right;"></div>
+            
+            <div style="margin: 12px 0; border-top: 1px solid #f0f1f2; border-bottom: 1px solid #f0f1f2; padding: 10px 0;">
+                <div id="currentLivePrice" style="font-size: 1.4rem; font-weight: 700; color: #2ebd85;">0.00</div>
+                <div style="font-size: 0.8rem; color: #5e6673; font-weight: 500;">≈Rs <span id="livePkrVal">0.00</span></div>
+            </div>
+
+            <div id="orderBookBuy" style="color: #2ebd85; font-size: 0.85rem; font-weight: 600; line-height: 1.8; text-align: right;"></div>
+            
+            <div style="margin-top: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 700; margin-bottom: 5px;">
+                    <span id="buyRatioText" style="color: #2ebd85;">B 58%</span>
+                    <span id="sellRatioText" style="color: #f6465d;">42% S</span>
+                </div>
+                <div style="width: 100%; height: 4px; background: #f6465d; border-radius: 10px; overflow: hidden; display: flex;">
+                    <div id="buyRatioBar" style="width: 58%; height: 100%; background: #2ebd85;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding: 24px 16px;">
+        <div style="display: flex; gap: 20px; border-bottom: 1px solid #f0f1f2; padding-bottom: 10px; margin-bottom: 15px;">
+            <span style="font-weight: 700; color: #000; font-size: 0.95rem; position: relative;">Orders<div style="position:absolute; bottom:-11px; left:0; width:100%; height:3px; background:#000;"></div></span>
+            <span style="font-weight: 600; color: #5e6673; font-size: 0.95rem;">Assets</span>
+            <span style="font-weight: 600; color: #5e6673; font-size: 0.95rem;">History</span>
+        </div>
+        <div id="openOrdersList" style="font-size: 0.85rem; color: #5e6673; text-align: center; padding: 30px 0;">
+            No open orders
+        </div>
+    </div>
+
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; height: 70px; background: #fff; border-top: 1px solid #f0f1f2; display: flex; justify-content: space-around; align-items: center; z-index: 10001; padding-bottom: 5px;">
+        <div onclick="nav(null, 'home')" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;">
+            <i class="fas fa-home" style="font-size: 1.2rem; color: #5e6673;"></i>
+            <span style="font-size: 0.65rem; font-weight: 600; color: #5e6673;">Home</span>
+        </div>
+        <div onclick="handleAdminAccess()" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;">
+            <i class="fas fa-gamepad" style="font-size: 1.2rem; color: #5e6673;"></i>
+            <span style="font-size: 0.65rem; font-weight: 600; color: #5e6673;">Game</span>
+        </div>
+        <div onclick="nav(null, 'tradePage')" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;">
+            <i class="fas fa-exchange-alt" style="font-size: 1.2rem; color: #000;"></i>
+            <span style="font-size: 0.65rem; font-weight: 700; color: #000;">Trade</span>
+        </div>
+        <div onclick="nav(null, 'miningPage')" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;">
+            <i class="fas fa-robot" style="font-size: 1.2rem; color: #5e6673;"></i>
+            <span style="font-size: 0.65rem; font-weight: 600; color: #5e6673;">Bots</span>
+        </div>
+        <div onclick="nav(null, 'walletPage')" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;">
+            <i class="fas fa-wallet" style="font-size: 1.2rem; color: #5e6673;"></i>
+            <span style="font-size: 0.65rem; font-weight: 600; color: #5e6673;">Assets</span>
+        </div>
+    </div>
+</div>
 <div id="adminPanel" class="page">
     <div class="header" style="position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 0;">
         <button onclick="nav(null, 'home'); toggleSidebar()" style="position: absolute; left: 0; background: none; border: none; color: #ffcc00; font-size: 1.5rem; cursor: pointer;">
@@ -1015,14 +1111,6 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
     </div>
     <div class="glass">
         <div class="admin-grid">
-            <button class="admin-btn" onclick="renderAdmin('pending', this)">
-                <i class="fas fa-clock"></i> <span>Form Pending</span>
-                <small class="count-badge" id="cnt-pending">0</small>
-            </button>
-            <button class="admin-btn" onclick="renderAdmin('approved', this)">
-                <i class="fas fa-check-circle"></i> <span>Form Approved</span>
-                <small class="count-badge" id="cnt-approved" style="background:#28a745">0</small>
-            </button>
             <button class="admin-btn" onclick="renderAdmin('members', this)">
                 <i class="fas fa-user-shield"></i> <span>KYC Requests</span>
                 <small class="count-badge" id="cnt-kyc">0</small>
@@ -1062,19 +1150,15 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
             </div>
         </div>
 <div class="admin-grid" style="grid-template-columns: 1fr; margin-top: 10px;">
-<div class="admin-grid" style="margin-top: 10px;">
-    <button class="admin-btn" onclick="renderAdmin('approved_inst', this)">
-        <i class="fas fa-check-double"></i> <span>Approved Inst</span>
-        <small class="count-badge" id="cnt-approved-inst" style="background:#28a745">0</small>
-    </button>
     <button class="admin-btn">
         <i class="fas fa-wallet"></i> <span>Inst Cash</span>
         <small class="count-badge" id="total-inst-cash" style="background:#00d2ff">Rs 0</small>
     </button>
 </div>
-    <button class="admin-btn" onclick="renderAdmin('installment_req', this)">
-        <i class="fas fa-file-invoice-dollar"></i> <span>Installment Requests</span>
-        <small class="count-badge" id="cnt-inst">0</small>
+<div class="admin-grid" style="grid-template-columns: 1fr; margin-top: 10px;">
+    <button class="admin-btn">
+        <i class="fas fa-percentage"></i> <span>Trade Fee Pool</span>
+        <small class="count-badge" id="trade-fee-display" style="background:#ffcc00; color:#000;">Rs 0</small>
     </button>
 </div>
 <div id="uploadBtnContainer" class="admin-grid" style="grid-template-columns: 1fr;">
@@ -1107,9 +1191,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
     </div>
 </div>
 </div>
-<a href="https://wa.me/923005534198" class="floating-chat" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+
 <nav class="nav-bar">
     <button class="nav-btn" onclick="nav(this, 'luckyDraw')">
         <i class="fas fa-dice"></i>
@@ -1137,6 +1219,13 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         const splash = document.getElementById('splashScreen');
         const auth = document.getElementById('authScreen');
         const token = localStorage.getItem('shine_token');
+        if (sessionStorage.getItem('skipSplash')) {
+            sessionStorage.removeItem('skipSplash');
+            splash.style.display = 'none';
+            auth.style.display = 'flex';
+            fetchAllData();
+            return;
+        }
         const cached = localStorage.getItem('shine_cache');
         if (cached) {
             globalData = JSON.parse(cached);
@@ -1144,6 +1233,8 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&displ
         }
         await fetchAllData();
         autoLoadMyDash();
+        initMiningUI();
+        updateExchangeUI();
         setTimeout(() => {
             splash.style.opacity = '0';
             if (!token) {
@@ -1160,6 +1251,11 @@ function nav(btn, pageId) {
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         if(btn) btn.classList.add('active');
         document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+if(pageId === 'tradePage') {
+            document.body.style.background = '#ffffff';
+        } else {
+            document.body.style.background = 'radial-gradient(circle at top, #003366, #000b18)';
+        }
         const targetPage = document.getElementById(pageId);
         if(targetPage) targetPage.style.display = 'block';
         if(pageId === 'userProfile') { /* Profile already loaded in background */ }
@@ -1178,7 +1274,7 @@ function nav(btn, pageId) {
         }
     }
 
-    let adminClicks = 0;
+    if (typeof adminClicks === 'undefined') { var adminClicks = 0; }
     function handleAdminAccess() {
         adminClicks++;
         if (adminClicks >= 10) {
@@ -1353,21 +1449,24 @@ video.srcObject = stream;
             else if (refCount >= 6) { levelName = "SILVER PARTNER"; starCount = 2; borderColor = "#c0c0c0"; }
             else if (refCount >= 1) { levelName = "BASIC PARTNER"; starCount = 1; borderColor = "#00d2ff"; }
 
-            document.getElementById('profilePreview').style.borderColor = borderColor;
-            document.getElementById('profilePreview').parentElement.style.position = "relative";
-            const existingStar = document.getElementById('profileStarOverlay');
-            if(existingStar) existingStar.remove();
-            
-            const starOverlay = document.createElement('div');
-            starOverlay.id = 'profileStarOverlay';
-            starOverlay.style = "position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;";
-            let profileStars = "";
-            for(let i=0; i<starCount; i++) {
-                let angle = (i - (starCount-1)/2) * 25;
-                profileStars += `<span style="position:absolute; left:50%; top:50%; transform: translate(-50%, -50%) rotate(${angle}deg) translateY(-65px); font-size:1.2rem; text-shadow:0 0 10px #ffcc00;">⭐</span>`;
+            const profPrev = document.getElementById('profilePreview');
+            if (profPrev && profPrev.parentElement) {
+                profPrev.style.borderColor = borderColor;
+                profPrev.parentElement.style.position = "relative";
+                const existingStar = document.getElementById('profileStarOverlay');
+                if(existingStar) existingStar.remove();
+                
+                const starOverlay = document.createElement('div');
+                starOverlay.id = 'profileStarOverlay';
+                starOverlay.style = "position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;";
+                let profileStars = "";
+                for(let i=0; i<starCount; i++) {
+                    let angle = (i - (starCount-1)/2) * 25;
+                    profileStars += `<span style="position:absolute; left:50%; top:50%; transform: translate(-50%, -50%) rotate(${angle}deg) translateY(-65px); font-size:1.2rem; text-shadow:0 0 10px #ffcc00;">⭐</span>`;
+                }
+                starOverlay.innerHTML = profileStars;
+                profPrev.parentElement.appendChild(starOverlay);
             }
-            starOverlay.innerHTML = profileStars;
-            document.getElementById('profilePreview').parentElement.appendChild(starOverlay);
 
             document.getElementById('profileDetails').innerHTML = `
                 <div style="margin-top: 10px;">
@@ -1536,15 +1635,15 @@ video.srcObject = stream;
 
             let html = `<div style="margin-bottom:20px; text-align:center;">
                 <h4 style="color:#00d2ff;">Available Profit</h4>
-                <h2 style="color:#28a745; font-size:2rem;">Rs ${availableProfit}</h2>
+                <h2 style="color:#28a745; font-size:2rem;">${availableProfit} SHINE</h2>
                 <div style="background:rgba(40,167,69,0.1); padding:10px; border-radius:10px; margin:10px 0; border:1px dashed #28a745;">
-                    <p style="font-size:0.7rem; color:#fff;">Level Up Bonus Included: <strong style="color:#ffcc00;">Rs ${bonus}</strong></p>
+                    <p style="font-size:0.7rem; color:#fff;">Level Up Bonus Included: <strong style="color:#ffcc00;">${bonus} SHINE</strong></p>
                 </div>
-                <button class="btn-main" onclick="claimProfit('${id}', ${availableProfit})" ${availableProfit <= 0 ? 'disabled' : ''} style="background:${availableProfit <= 0 ? '#555' : ''}">Claim Profit</button>
+                <button class="btn-main" onclick="claimProfit('${id}', ${availableProfit})" ${availableProfit <= 0 ? 'disabled' : ''} style="background:${availableProfit <= 0 ? '#555' : ''}">Claim Tokens to Wallet</button>
             </div>
             <div class="stat-card">
                 <div class="stat-info"><p>Total Members</p><h3>${myTeam.length}</h3></div>
-                <div class="stat-info" style="text-align: right;"><p>Total Earned</p><h3>Rs ${totalProfit}</h3></div>
+                <div class="stat-info" style="text-align: right;"><p>Total Earned</p><h3>${totalProfit} SHINE</h3></div>
             </div>
             <h4 style="color:#00d2ff; margin-bottom:10px;">Team Members</h4>
             <div class="member-list" style="margin-bottom:20px;">`;
@@ -1586,7 +1685,7 @@ video.srcObject = stream;
                             <span style="font-size:0.7rem; opacity:0.6;">${new Date(c.timestamp).toLocaleDateString()}</span>
                         </div>
                         <div style="display:flex; justify-content:space-between; width:100%; margin-top:5px;">
-                            <strong style="color:#fff;">Rs ${c.amount}</strong>
+                            <strong style="color:#fff;">${c.amount} SHINE</strong>
                             <span style="color:${c.status === 'approved' ? '#28a745' : '#ff5050'}; font-weight:bold; font-size:0.75rem;">${c.status.toUpperCase()}</span>
                         </div>
                     </div>`;
@@ -1637,10 +1736,11 @@ video.srcObject = stream;
 
         const res = await supabaseRequest('shine_claims', 'POST', claim);
         if (res && !res.error) {
-            alert('Claim request sent to Admin!');
+            syncReferralToWallet(amount);
+            alert('Tokens Claimed Successfully to your Wallet!');
             loadDashboard(userId);
         } else {
-            alert('Failed to send claim');
+            alert('Failed to claim tokens');
         }
         btn.disabled = false;
         btn.innerText = originalText;
@@ -1755,8 +1855,8 @@ async function loadMembers() {
         const newMember = { 
             id: myId, email: user.email, name, phone, address: document.getElementById('userAddress').value, 
             gender: document.getElementById('userGender').value,
-            product_type: currentRegProduct || 'Mobile',
-            payment: parseInt(document.getElementById('userPayment').value) || 0, 
+            product_type: 'Solar',
+            payment: 6000,
             qty: parseInt(document.getElementById('userQty').value) || 1, 
             payment_method: document.getElementById('userMethod').value,
             img: uploadedImageData, payment_proof: paymentProofData,
@@ -1768,7 +1868,7 @@ async function loadMembers() {
             if (result && !result.error) {
                 showReceipt(newMember);
                 const waText = `🌟 *SHINE STAR NEW REGISTRATION* 🌟\n\n` +
-            `📦 *Product:* ${currentRegProduct}\n` +
+            `📦 *Product:* Solar System\n` +
             `🆔 *Member ID:* ${myId}\n` +
             `👤 *Name:* ${name}\n` +
                     `📞 *Phone:* ${phone}\n` +
@@ -1830,16 +1930,12 @@ async function renderAllUIs() {
     if (myProducts.includes('Solar')) {
         const solarCount = approved.filter(m => m.product_type === 'Solar').length;
         const sGroupSize = 200;
-        const sPercent = (solarCount % sGroupSize || sGroupSize) / sGroupSize * 100;
-        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Solar Group Occupancy</span><span>${solarCount % sGroupSize || sGroupSize}/${sGroupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${sPercent}%"></div></div></div>`;
+        const groupNum = Math.ceil(solarCount / sGroupSize) || 1;
+        const currentSeats = solarCount % sGroupSize || (solarCount > 0 ? sGroupSize : 0);
+        const sPercent = (currentSeats / sGroupSize) * 100;
+        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Solar Group ${groupNum} Occupancy</span><span>${currentSeats}/${sGroupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${sPercent}%"></div></div></div>`;
     }
-    if (myProducts.includes('Mobile')) {
-        const mobileCount = approved.filter(m => m.product_type === 'Mobile').length;
-        const mGroupSize = 130;
-        const mPercent = (mobileCount % mGroupSize || mGroupSize) / mGroupSize * 100;
-        occupancyHtml += `<div style="margin-bottom: 15px;"><div class="progress-text"><span>Mobile Group Occupancy</span><span>${mobileCount % mGroupSize || mGroupSize}/${mGroupSize} Seats</span></div><div class="progress-container"><div class="progress-bar" style="width: ${mPercent}%"></div></div></div>`;
-    }
-    document.getElementById('occupancyContainer').innerHTML = occupancyHtml || `<p style="text-align:center; font-size:0.7rem; opacity:0.5;">Join a group to see occupancy</p>`;
+     document.getElementById('occupancyContainer').innerHTML = occupancyHtml || `<p style="text-align:center; font-size:0.7rem; opacity:0.5;">Join a group to see occupancy</p>`;
 
     if(document.getElementById('cnt-pending')) document.getElementById('cnt-pending').innerText = pending.length;
     if(document.getElementById('cnt-approved')) document.getElementById('cnt-approved').innerText = approved.length;
@@ -2082,9 +2178,10 @@ async function uploadNotePhoto(input) {
         let html = "";
         let list = [];
         try {
-       if(type === 'pending' || type === 'approved') {
-            list = globalData.members.filter(m => m.status === type && (m.product_type === 'Mobile' || !m.product_type) && (m.kyc_status || '') !== 'pending');
-        } else if(type === 'pending_solar' || type === 'approved_solar') {
+       if(type === 'pending' || type === 'approved' || type === 'pending_solar' || type === 'approved_solar') {
+            const statusVal = type.includes('pending') ? 'pending' : 'approved';
+            list = globalData.members.filter(m => m.status === statusVal && m.product_type === 'Solar' && (m.kyc_status || '') !== 'pending');
+        } else if(type === 'pending_inst_solar' || type === 'approved_inst_solar') {
             const statusVal = type.includes('pending') ? 'pending' : 'approved';
             list = globalData.members.filter(m => m.status === statusVal && m.product_type === 'Solar' && (m.kyc_status || '') !== 'pending');
         } else if(type === 'pending_inst_solar' || type === 'approved_inst_solar') {
@@ -2205,7 +2302,7 @@ async function uploadNotePhoto(input) {
                         <strong>${realName}</strong>
                         <span style="color:#00d2ff; font-size:0.7rem;">ID: SS-${c.user_id.toString().replace('SS-','')}</span>
                     </div>
-                    <p style="margin:5px 0; font-size:0.9rem;">Requested: <strong style="color:#ffcc00;">Rs ${c.amount}</strong></p>
+                    <p style="margin:5px 0; font-size:0.9rem;">Requested: <strong style="color:#ffcc00;">${c.amount} SHINE</strong></p>
                     <div class="admin-actions" style="width:100%; margin-top:10px;">
                         <button class="btn-approve" style="width:100%; padding:10px;" onclick="handleClaim('${c.id}', 'approved')">APPROVE PROFIT PAYMENT</button>
                     </div>
@@ -2262,17 +2359,16 @@ async function addDailyPay(memberId) {
     const res = await supabaseRequest('shine_daily_payments', 'POST', payload);
     if(res && !res.error) {
         const allDaily = await supabaseRequest(`shine_daily_payments?member_id=eq.${rawId}&select=amount`);
-        const total = allDaily.reduce((s, p) => s + p.amount, 0);
-        const member = globalData.members.find(m => String(m.id) === String(rawId));
-        const instAmount = member && member.product_type === 'Solar' ? 6000 : 5000;
+        const total = allDaily.reduce((s, p) => s + (Number(p.amount) || 0), 0);
+        const instAmount = 6000;
         const currentInstRes = await supabaseRequest(`shine_installments?member_id=eq.${rawId}&status=eq.approved&select=month_number`);
-        const alreadyPaidMonths = currentInstRes.map(i => i.month_number);
+        const alreadyPaidMonths = Array.isArray(currentInstRes) ? currentInstRes.map(i => parseInt(i.month_number)) : [];
         const totalPaidInstallments = Math.floor(total / instAmount);
         
-        for (let m = 1; m <= totalPaidInstallments; m++) {
-            if (!alreadyPaidMonths.includes(m)) {
+        for (let m = 1; m <= (totalPaidInstallments + 1); m++) {
+            if (m > 1 && !alreadyPaidMonths.includes(m)) {
                 await supabaseRequest('shine_installments', 'POST', {
-                    member_id: rawId,
+                    member_id: String(rawId),
                     month_number: m,
                     amount: instAmount,
                     status: 'approved',
@@ -2414,24 +2510,34 @@ async function adminAction(id, action, btn) {
         if(myEntries.length > 0) {
             let historyHtml = "";
             let progressHtml = "";
-            for (const entry of myEntries) {
-                const dailyRes = await supabaseRequest(`shine_daily_payments?member_id=eq.${entry.id}&select=*`);
-                if(dailyRes && !dailyRes.error) {
-                    const total = dailyRes.reduce((s, p) => s + p.amount, 0);
-                    const target = entry.product_type === 'Solar' ? 6000 : 5000;
-                    const currentMonthTotal = total % target;
-                    const percent = (currentMonthTotal / target * 100);
-                    progressHtml += `
-                        <div class="progress-text"><span>${entry.product_type} Pay Due Progress</span><span>Rs ${currentMonthTotal} / ${target}</span></div>
-                        <div class="progress-container"><div class="progress-bar" style="width: ${percent}%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div></div>`;
-                    dailyRes.reverse().forEach(p => {
-                        historyHtml += `<div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(40,167,69,0.1); padding:4px 0;"><span>[${entry.product_type}] ${new Date(p.timestamp).toLocaleDateString()}</span><span>Rs ${p.amount}</span></div>`;
+            const dailyPaymentsRes = await supabaseRequest(`shine_daily_payments?select=*`);
+            if(dailyPaymentsRes && !dailyPaymentsRes.error) {
+                for (const entry of myEntries) {
+                    const myDaily = dailyPaymentsRes.filter(p => String(p.member_id) === String(entry.id));
+                    const total = myDaily.reduce((s, p) => s + p.amount, 0);
+                    const target = 6000;
+        const currentMonthTotal = total % target;
+        const percent = (currentMonthTotal / target * 100);
+        progressHtml += `<div style="margin-bottom:15px;"><div class="progress-text"><span>Solar Pay Due Progress</span><span>Rs ${currentMonthTotal} / ${target}</span></div><div class="progress-container"><div class="progress-bar" style="width: ${percent}%; background: linear-gradient(90deg, #00d2ff, #28a745);"></div></div></div>`; myDaily.slice().reverse().forEach(p => {
+                        const d = new Date(p.timestamp);
+                        const dayName = d.toLocaleDateString('en-US', { weekday: 'long' });
+                        const dateStr = d.toLocaleDateString();
+                        const timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        historyHtml += `<div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 8px; margin-bottom: 8px; border-left: 3px solid #28a745;">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.75rem; color:#fff; font-weight:600;">${entry.name} <small style="color:#00d2ff;">(ID: ${entry.id})</small></span>
+                                <span style="font-size:0.8rem; color:#28a745; font-weight:800;">Rs ${p.amount}</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; font-size:0.6rem; opacity:0.7; margin-top:4px; color:#e0e0e0;">
+                                <span><i class="fas fa-calendar-alt"></i> ${dayName}, ${dateStr}</span>
+                                <span><i class="fas fa-clock"></i> ${timeStr}</span>
+                            </div>
+                        </div>`;
                     });
                 }
             }
             const progCont = document.getElementById('dailyProgressBar').parentElement.parentElement;
-            progCont.innerHTML = progressHtml;
-            document.getElementById('recentDailyPayments').innerHTML = historyHtml;
+            progCont.innerHTML = progressHtml + `<div id="recentDailyPayments" style="margin-top:15px; max-height:220px; overflow-y:auto; padding-right:5px; scrollbar-width: none; -ms-overflow-style: none;">${historyHtml}</div>`;
         }
     }
 
@@ -2458,7 +2564,7 @@ async function adminAction(id, action, btn) {
                 const m = d.shine_members || globalData.members.find(mem => String(mem.id) === String(d.winner_id));
                 if(m) {
                     html += `<div class="glass" style="text-align: center; border: 1px solid rgba(255, 204, 0, 0.3); background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,204,0,0.05)); margin-bottom: 25px; padding: 25px;">
-                        <p style="font-size: 0.7rem; color: #ffcc00; letter-spacing: 3px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">🏆 Mobile Winner</p>
+                        <p style="font-size: 0.7rem; color: #ffcc00; letter-spacing: 3px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">🏆 Solar Winner</p>
                         <div style="position: relative; width: 110px; height: 110px; margin: 0 auto 20px;">
                             <div class="profile-placeholder" style="width: 100%; height: 100%; margin: 0; border-color: #ffcc00; box-shadow: 0 0 20px rgba(255,204,0,0.2); overflow: hidden;">
                                 ${m.img ? `<img src="${m.img}" style="width:100%; height:100%; object-fit:cover;">` : ''}
@@ -2473,7 +2579,7 @@ async function adminAction(id, action, btn) {
                             <p style="opacity: 0.8;">Draw Date: ${new Date(d.draw_date || d.created_at).toLocaleDateString()}</p>
                         </div>
                         <div style="width: 40px; height: 2px; background: #ffcc00; margin: 15px auto;"></div>
-                        <h3 style="color: #ffcc00; font-size: 1rem; font-weight: 600; letter-spacing: 1px; font-style: italic;">"Mubarak Ho! Shine Star Luck System ki taraf se aapko naya Mobile tohfa diya jata hai."</h3>
+                        <h3 style="color: #ffcc00; font-size: 1rem; font-weight: 600; letter-spacing: 1px; font-style: italic;">"Mubarak Ho! Shine Star Luck System ki taraf se aapko Solar System tohfa diya jata hai."</h3>
                         <div style="margin-top: 20px; display: inline-block; padding: 5px 15px; border-radius: 50px; background: rgba(40, 167, 69, 0.1); border: 1px solid #28a745;">
                             <span style="color: #28a745; font-size: 0.65rem; font-weight: 800; text-transform: uppercase;"><i class="fas fa-check-circle"></i> Verified Winner</span>
                         </div>
@@ -2552,6 +2658,7 @@ if (!email || !password) { alert("Email and Password required"); return; }
 
     function logout() {
         localStorage.clear();
+        sessionStorage.setItem('skipSplash', 'true');
         location.reload();
     }
 function shareReferral() {
@@ -2588,8 +2695,8 @@ let selectedMonth = 0;
         selectedMonth = month;
         currentPayId = memberId;
         const user = globalData.members.find(m => String(m.id) === String(memberId));
-        const amount = productType === 'Solar' ? 6000 : 5000;
-        document.getElementById('modalMonthText').innerText = `${productType} - Month ${month} (Rs ${amount})`;
+        const amount = 6000;
+        document.getElementById('modalMonthText').innerText = `Solar System - Month ${month} (Rs ${amount})`;
         document.getElementById('instName').value = user.name || '';
         document.getElementById('instPhone').value = user.phone || '';
         document.getElementById('instAddress').value = user.address || '';
@@ -2614,7 +2721,7 @@ let selectedMonth = 0;
                 month_number: parseInt(selectedMonth),
                 proof_img: base64,
                 method: document.getElementById('instMethod').value,
-                amount: user.product_type === 'Solar' ? 6000 : 5000,
+                amount: 6000,
                 status: 'pending',
                 timestamp: Date.now()
             };
@@ -2651,15 +2758,15 @@ async function renderInstallmentCard() {
         return;
     }
     let fullHtml = "";
-    userProducts.forEach(user => {
+    userProducts.filter(p => p.product_type === 'Solar').forEach(user => {
         const paidMonths = globalData.installments
             .filter(ins => String(ins.member_id) === String(user.id) && ins.status === 'approved')
             .map(ins => parseInt(ins.month_number));
         if (!paidMonths.includes(1)) paidMonths.push(1);
-        const maxMonths = user.product_type === 'Solar' ? 30 : 15;
+        const maxMonths = 30;
         let html = `<div class="glass" style="border: 1px solid rgba(0, 210, 255, 0.3); background: linear-gradient(180deg, rgba(0, 51, 102, 0.4), rgba(0, 11, 24, 0.8)); margin-bottom:20px;">
             <div style="text-align:center; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:15px;">
-                <h4 style="color:#00d2ff; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px;">${user.product_type} PLAN</h4>
+                <h4 style="color:#00d2ff; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px;">SOLAR SYSTEM PLAN</h4>
                 <h2 style="color:#ffcc00; font-size:1.4rem; text-transform:uppercase;">${user.name}</h2>
                 <p style="color:#00d2ff; font-weight:bold; font-size:0.9rem;">ID: ${user.id}</p>
             </div>
@@ -2670,7 +2777,7 @@ async function renderInstallmentCard() {
                 <span style="font-size:0.5rem; opacity:0.5; display:block;">MONTH ${i}</span>
                 <h4 style="margin:5px 0; font-size:0.8rem; color:${isPaid ? '#28a745' : '#ffcc00'}">${isPaid ? 'PAID ✔️' : 'DUE'}</h4>
                 <div style="font-size:1.1rem; margin-bottom:5px;">${isPaid ? '<i class="fas fa-check-circle" style="color:#28a745;"></i>' : '<i class="fas fa-clock" style="color:#ffcc00; opacity:0.5;"></i>'}</div>
-                ${!isPaid ? `<button onclick="openPayModal(${i}, '${user.id}', '${user.product_type}')" style="background:#00d2ff; border:none; color:#000; font-size:0.65rem; padding:5px 10px; border-radius:8px; font-weight:bold; box-shadow:0 2px 5px rgba(0,210,255,0.3);">Pay Now</button>` : ''}
+                ${!isPaid ? `<button onclick="openPayModal(${i}, '${user.id}', 'Solar')" style="background:#00d2ff; border:none; color:#000; font-size:0.65rem; padding:5px 10px; border-radius:8px; font-weight:bold; box-shadow:0 2px 5px rgba(0,210,255,0.3);">Pay Now</button>` : ''}
             </div>`;
         }
         html += `</div></div>`;
@@ -2678,15 +2785,10 @@ async function renderInstallmentCard() {
     });
     container.innerHTML = fullHtml;
 }
-    let currentRegProduct = 'Mobile';
-    let currentRegAmount = 5000;
-
-    function openRegistration(product, amount) {
-        currentRegProduct = product;
-        currentRegAmount = amount;
+    function openRegistration() {
         nav(null, 'form');
-        document.getElementById('productType').value = product;
-        document.getElementById('userPayment').value = amount;
+        document.getElementById('productType').value = 'Solar System';
+        document.getElementById('userPayment').value = 6000;
         document.getElementById('formStep1').style.display = 'block';
         document.getElementById('formStep2').style.display = 'none';
     }
@@ -2699,6 +2801,230 @@ async function renderInstallmentCard() {
         }
         showSplash();
     };
+let miningInterval;
+function startMiningProcess() {
+    const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    if(!user.id) return alert("Please login to start mining");
+    const now = Date.now();
+    const endTime = now + (3 * 60 * 60 * 1000);
+    localStorage.setItem(`mining_end_${user.id}`, endTime);
+    initMiningUI();
+}
+
+function initMiningUI() {
+    const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    if(!user.id) return;
+    const endTime = localStorage.getItem(`mining_end_${user.id}`);
+    const btn = document.getElementById('startMiningBtn');
+    const timerDisplay = document.getElementById('miningTimer');
+    const status = document.getElementById('miningStatus');
+    const circle = document.getElementById('miningCircle');
+    const icon = document.getElementById('miningIcon');
+    const totalDisplay = document.getElementById('totalMinedTokens');
+
+    totalDisplay.innerText = localStorage.getItem(`total_mined_${user.id}`) || "0.00";
+
+    if (miningInterval) clearInterval(miningInterval);
+
+    if (!endTime) {
+        btn.disabled = false;
+        btn.innerText = "START MINING";
+        timerDisplay.innerText = "03:00:00";
+        status.innerText = "SYSTEM READY";
+        circle.style.animationPlayState = "paused";
+        icon.classList.remove('fa-spin');
+        return;
+    }
+
+    miningInterval = setInterval(() => {
+        const now = Date.now();
+        const remaining = endTime - now;
+
+        if (remaining <= 0) {
+            clearInterval(miningInterval);
+            localStorage.removeItem(`mining_end_${user.id}`);
+            let currentBalance = parseFloat(localStorage.getItem(`total_mined_${user.id}`) || "0");
+            currentBalance += 3;
+            localStorage.setItem(`total_mined_${user.id}`, currentBalance.toFixed(2));
+            alert("Mining Complete! 3 SHINE Tokens added to your balance.");
+            initMiningUI();
+        } else {
+            btn.disabled = true;
+            btn.innerText = "MINING IN PROGRESS...";
+            status.innerText = "SOLAR ENERGY COLLECTING...";
+            circle.style.animationPlayState = "running";
+            circle.style.opacity = "1";
+            icon.style.textShadow = "0 0 30px #ffcc00";
+            
+            const h = Math.floor(remaining / 3600000);
+            const m = Math.floor((remaining % 3600000) / 60000);
+            const s = Math.floor((remaining % 60000) / 1000);
+            timerDisplay.innerText = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+    }, 1000);
+}
+let currentPrice = 1.00;
+let tradeMode = 'buy';
+let orderType = 'limit';
+
+async function updateExchangeUI() {
+    const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    const shineBalance = parseFloat(localStorage.getItem(`total_mined_${user.id}`) || "0");
+    const pkrBalance = parseFloat(localStorage.getItem(`pkr_balance_${user.id}`) || "5000");
+    
+    document.getElementById('currentLivePrice').innerText = currentPrice.toFixed(2);
+    document.getElementById('livePkrVal').innerText = currentPrice.toFixed(2);
+    if(orderType === 'market') document.getElementById('tradePrice').value = currentPrice.toFixed(2);
+    
+    document.getElementById('tradeAvailable').innerText = tradeMode === 'buy' ? pkrBalance.toFixed(2) + " PKR" : shineBalance.toFixed(2) + " SHINE";
+
+    let sellHtml = "", buyHtml = "";
+    for(let i=0; i<5; i++) {
+        let sP = currentPrice + (i * 0.02) + 0.01;
+        let bP = currentPrice - (i * 0.02) - 0.01;
+        sellHtml += `<div style="display:flex; justify-content:space-between;"><span>${sP.toFixed(2)}</span><span style="color:#000">${(Math.random()*500).toFixed(1)}</span></div>`;
+        buyHtml += `<div style="display:flex; justify-content:space-between;"><span>${bP.toFixed(2)}</span><span style="color:#000">${(Math.random()*500).toFixed(1)}</span></div>`;
+    }
+    document.getElementById('orderBookSell').innerHTML = sellHtml;
+    document.getElementById('orderBookBuy').innerHTML = buyHtml;
+
+    let bRatio = 40 + Math.floor(Math.random() * 30);
+    let sRatio = 100 - bRatio;
+    document.getElementById('buyRatioBar').style.width = bRatio + "%";
+    document.getElementById('buyRatioText').innerText = "B " + bRatio + "%";
+    document.getElementById('sellRatioText').innerText = sRatio + "% S";
+
+    const orders = await supabaseRequest(`shine_orders?user_id=eq.${user.id}&status=eq.pending&order=created_at.desc`);
+    if(orders && !orders.error && Array.isArray(orders)) {
+        let oHtml = "";
+        orders.forEach(o => {
+            oHtml += `<div style="display:flex; justify-content:space-between; padding:10px; border-bottom:1px solid #f5f5f5;">
+                <div style="text-align:left;"><span style="color:${o.type==='buy'?'#2ebd85':'#f6465d'}; font-weight:bold;">${o.type.toUpperCase()}</span><br><small>${new Date(o.created_at).toLocaleTimeString()}</small></div>
+                <div style="text-align:right;"><b>${o.price.toFixed(2)}</b><br><small>${o.amount.toFixed(2)} SHINE</small></div>
+            </div>`;
+        });
+        document.getElementById('openOrdersList').innerHTML = oHtml || "No open orders";
+        checkLimitOrders(orders);
+    }
+}
+
+function setTradePercent(percent) {
+    const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    const price = parseFloat(document.getElementById('tradePrice').value) || currentPrice;
+document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+        dot.style.background = (idx <= (percent/0.25)-1) ? '#000' : '#eee';
+        dot.style.borderColor = (idx <= (percent/0.25)-1) ? '#000' : '#ddd';
+    });
+    if(tradeMode === 'buy') {
+        const pkrBalance = parseFloat(localStorage.getItem(`pkr_balance_${user.id}`) || "5000");
+        document.getElementById('tradeAmount').value = ((pkrBalance * percent) / price).toFixed(2);
+    } else {
+        const shineBalance = parseFloat(localStorage.getItem(`total_mined_${user.id}`) || "0");
+        document.getElementById('tradeAmount').value = (shineBalance * percent).toFixed(2);
+    }
+    document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+        dot.style.background = (idx <= (percent/0.25)-1) ? '#000' : '#eee';
+    });
+}
+async function checkLimitOrders(orders) {
+    for(let o of orders) {
+        if((o.type === 'buy' && currentPrice <= o.price) || (o.type === 'sell' && currentPrice >= o.price)) {
+            await processOrderExecution(o);
+        }
+    }
+}
+
+async function processOrderExecution(order) {
+    const fee = order.total * 0.01;
+    const netTotal = order.total - fee;
+    await supabaseRequest(`shine_orders?id=eq.${order.id}`, 'PATCH', {status: 'filled'});
+   const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    if(order.type === 'buy') {
+        let shine = parseFloat(localStorage.getItem(`total_mined_${user.id}`) || "0");
+        localStorage.setItem(`total_mined_${user.id}`, (shine + order.amount).toFixed(2));
+    } else {
+        let pkr = parseFloat(localStorage.getItem(`pkr_balance_${user.id}`) || "0");
+        localStorage.setItem(`pkr_balance_${user.id}`, (pkr + netTotal).toFixed(2));
+    } 
+const config = globalData.config.find(c => c.key === 'trade_fee_pool');
+    const newFeeTotal = parseFloat(config?.value || 0) + fee;
+    await supabaseRequest(`shine_config?key=eq.trade_fee_pool`, 'PATCH', {value: newFeeTotal.toString()});
+    fetchAllData();
+}
+
+function setTradeMode(mode) {
+    tradeMode = mode;
+    const buyBtn = document.getElementById('buyTab');
+    const sellBtn = document.getElementById('sellTab');
+    const execBtn = document.getElementById('tradeExecBtn');
+    
+    if(mode === 'buy') {
+        buyBtn.style.background = '#2ebd85';
+        buyBtn.style.color = '#fff';
+        sellBtn.style.background = 'transparent';
+        sellBtn.style.color = '#5e6673';
+        execBtn.style.background = '#2ebd85';
+        execBtn.style.boxShadow = '0 4px 12px rgba(46, 189, 133, 0.2)';
+        execBtn.innerText = 'Buy SHINE';
+    } else {
+        sellBtn.style.background = '#f6465d';
+        sellBtn.style.color = '#fff';
+        buyBtn.style.background = 'transparent';
+        buyBtn.style.color = '#5e6673';
+        execBtn.style.background = '#f6465d';
+        execBtn.style.boxShadow = '0 4px 12px rgba(246, 70, 93, 0.2)';
+        execBtn.innerText = 'Sell SHINE';
+    }
+    updateExchangeUI();
+}
+
+async function executeTrade() {
+    const user = JSON.parse(localStorage.getItem('shine_user_data') || '{}');
+    const price = parseFloat(document.getElementById('tradePrice').value) || currentPrice;
+    const amount = parseFloat(document.getElementById('tradeAmount').value);
+    if(!amount || amount <= 0) { alert("Enter Amount"); return; }
+
+    const total = price * amount;
+    const pkrBalance = parseFloat(localStorage.getItem(`pkr_balance_${user.id}`) || "5000");
+    const shineBalance = parseFloat(localStorage.getItem(`total_mined_${user.id}`) || "0");
+
+    if(tradeMode === 'buy' && total > pkrBalance) { alert("Insufficient PKR Balance"); return; }
+    if(tradeMode === 'sell' && amount > shineBalance) { alert("Insufficient SHINE Balance"); return; }
+
+    if(tradeMode === 'buy') {
+        localStorage.setItem(`pkr_balance_${user.id}`, (pkrBalance - total).toFixed(2));
+    } else {
+        localStorage.setItem(`total_mined_${user.id}`, (shineBalance - amount).toFixed(2));
+    }
+
+    const order = { user_id: user.id, type: tradeMode, order_type: orderType, price, amount, total, status: 'pending', created_at: new Date().toISOString() };
+    
+    if(orderType === 'market') {
+        await processOrderExecution({...order, id: 'market'});
+        alert("Market Order Executed");
+    } else {
+        const res = await supabaseRequest('shine_orders', 'POST', order);
+        if(!res.error) alert("Limit Order Placed");
+    }
+    updateExchangeUI();
+}
+
+setInterval(() => {
+    let change = (Math.random() - 0.5) * 0.05;
+    let oldPrice = currentPrice;
+    currentPrice += change;
+    if(currentPrice < 0.1) currentPrice = 0.1;
+    
+    const priceEl = document.getElementById('currentLivePrice');
+    if(priceEl) {
+        priceEl.style.color = currentPrice >= oldPrice ? '#2ebd85' : '#f6465d';
+        priceEl.innerText = currentPrice.toFixed(2);
+    }
+    
+    if(document.getElementById('tradePage').style.display === 'block' || document.getElementById('tradePage').style.display === 'fixed') {
+        updateExchangeUI();
+    }
+}, 2000);
 </script>
 </body>
 </html>
