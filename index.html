@@ -4179,13 +4179,6 @@
         </div>
     </div>
     <script>
-        const SHINE_CONTRACT_ADDRESS = "YOUR_DEPLOYED_CONTRACT_ADDRESS";
-        const SHINE_ABI = [
-            "function users(address) view returns (uint256 id, address upline, uint256 partnersCount, string nickname, string avatarHash, uint256 joinDate, bool isRegistered)",
-            "function register(address _upline, string _nickname, string _avatarHash) external",
-            "function buyLevel(uint8 _program, uint8 _level) external",
-            "function updateProfile(string _nickname, string _avatarHash) external"
-        ];
         let provider, signer, userWallet;
 
         const progPrices = {
@@ -4637,19 +4630,9 @@ function closeUpgrade() {
 }
         async function saveProfile() {
             const newName = document.getElementById('inputNickname').value;
-            if(newName && userWallet) {
-                try {
-                    signer = provider.getSigner();
-                    const contract = new ethers.Contract(SHINE_CONTRACT_ADDRESS, SHINE_ABI, signer);
-                    const hashToSave = window.currentAvatarHash || "";
-                    const tx = await contract.updateProfile(newName, hashToSave);
-                    await tx.wait();
-                    document.getElementById('displayNickname').innerText = newName;
-                    alert("Profile updated on Blockchain!");
-                } catch (err) {
-                    console.error(err);
-                    alert("Transaction failed or rejected.");
-                }
+            if (newName) {
+                const disp = document.getElementById('displayNickname');
+                if (disp) disp.innerText = newName;
             }
             toggleProfileEdit();
         }
