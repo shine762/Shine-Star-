@@ -4335,37 +4335,8 @@
 
         async function loadProfileData() {
             startDividendTimer();
-            try {
-                if (window.ethereum) {
-                    provider = new ethers.providers.Web3Provider(window.ethereum);
-                    const accounts = await provider.listAccounts();
-                    if (accounts.length > 0) {
-                        userWallet = accounts[0];
-                        document.getElementById('displayWallet').innerText = userWallet.substring(0, 6) + '...' + userWallet.substring(userWallet.length - 4);
-                        
-                        const contract = new ethers.Contract(SHINE_CONTRACT_ADDRESS, SHINE_ABI, provider);
-                        const profile = await contract.profiles(userWallet);
-                        
-                        if (profile.isRegistered) {
-                            if (profile.nickname) {
-                                document.getElementById('displayNickname').innerText = profile.nickname;
-                                document.getElementById('inputNickname').value = profile.nickname;
-                            }
-                            if (profile.avatarHash) {
-                                const ipfsUrl = `https://ipfs.io/ipfs/${profile.avatarHash}`;
-                                document.querySelectorAll('.avatar, .edit-avatar').forEach(el => {
-                                    el.style.backgroundImage = `url('${ipfsUrl}')`;
-                                });
-                            }
-                            if (profile.joinDate > 0) {
-                                const d = new Date(profile.joinDate * 1000);
-                                document.querySelector('.invited-by-row').innerHTML = `joined ${d.toLocaleDateString()} <span class="upline-badge" onclick="previewUpline('${profile.upline}')">Upline</span>`;
-                            }
-                        }
-                    }
-                }
-                        document.getElementById('notifDot').style.display = 'none';
-            } catch (err) { console.error("Web3 Profile Error:", err); }
+            const notifDot = document.getElementById('notifDot');
+            if (notifDot) notifDot.style.display = 'none';
 
             const mem = document.getElementById('totalMembers');
             const profitVal = document.getElementById('realProfitValue');
